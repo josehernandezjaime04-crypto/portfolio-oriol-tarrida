@@ -18,7 +18,9 @@
       if (value === undefined) return;
 
       if (Array.isArray(value)) {
-        el.innerHTML = value.map((p) => `<p>${p}</p>`).join("");
+        // Single wrapper div so the CSS grid 0fr/1fr collapse animates one
+        // row (the whole block), not one row per paragraph.
+        el.innerHTML = `<div>${value.map((p) => `<p>${p}</p>`).join("")}</div>`;
       } else if (el.classList.contains("more-btn")) {
         const isOpen = el.closest(".category-text").classList.contains("open");
         el.textContent = isOpen ? dict["common.less"] : dict["common.more"];
