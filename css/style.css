@@ -227,7 +227,7 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
 
 /* -- Body -- */
 .contact-body{text-align:left;}
-.contact h2{font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 14px;max-width:14ch;}
+.contact h2{font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 14px;max-width:20ch;}
 .contact-sub{color:var(--cream-dim);max-width:52ch;margin:0 0 48px;}
 
 .contact-section-label{
@@ -373,6 +373,7 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   .main-nav.open{right:0;}
   .nav-toggle{display:flex;}
   .category, .category.reverse{grid-template-columns:1fr;}
+  .category-media{min-height:52vh;}
   .category-media > img, .media-placeholder{min-height:52vh;}
   .category.reverse .category-media{order:1;}
   .category.reverse .category-text{order:2;}
