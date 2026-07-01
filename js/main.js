@@ -103,6 +103,22 @@
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in-view"));
   }
 
+  // Subtle 3D tilt on category photos, following the cursor (desktop only)
+  if (!prefersReducedMotion && window.matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".category-media").forEach((media) => {
+      const MAX_TILT = 5;
+      media.addEventListener("mousemove", (e) => {
+        const rect = media.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        media.style.transform = `perspective(1400px) rotateX(${(-py * MAX_TILT).toFixed(2)}deg) rotateY(${(px * MAX_TILT).toFixed(2)}deg)`;
+      });
+      media.addEventListener("mouseleave", () => {
+        media.style.transform = "perspective(1400px) rotateX(0deg) rotateY(0deg)";
+      });
+    });
+  }
+
   // Mobile nav
   const navToggle = document.getElementById("navToggle");
   const mainNav = document.getElementById("mainNav");

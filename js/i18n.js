@@ -14,6 +14,17 @@ const translations = {
     "carousel.next": "Foto següent",
     "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
 
+    "tag.safety": "Seguretat",
+    "tag.choreography": "Coreografia",
+    "tag.communication": "Comunicació",
+    "tag.trajectories": "Trajectòries",
+    "tag.precision": "Precisió",
+    "tag.rehearsal": "Assaig",
+    "tag.impact": "Impacte",
+    "tag.protection": "Protecció",
+    "tag.protocol": "Protocol",
+    "tag.verification": "Verificació",
+
     "common.more": "Saber-ne més",
     "common.less": "Saber-ne menys",
 
@@ -85,6 +96,17 @@ const translations = {
     "carousel.next": "Foto siguiente",
     "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
 
+    "tag.safety": "Seguridad",
+    "tag.choreography": "Coreografía",
+    "tag.communication": "Comunicación",
+    "tag.trajectories": "Trayectorias",
+    "tag.precision": "Precisión",
+    "tag.rehearsal": "Ensayo",
+    "tag.impact": "Impacto",
+    "tag.protection": "Protección",
+    "tag.protocol": "Protocolo",
+    "tag.verification": "Verificación",
+
     "common.more": "Saber más",
     "common.less": "Saber menos",
 
@@ -155,6 +177,17 @@ const translations = {
     "carousel.prev": "Previous photo",
     "carousel.next": "Next photo",
     "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
+
+    "tag.safety": "Safety",
+    "tag.choreography": "Choreography",
+    "tag.communication": "Communication",
+    "tag.trajectories": "Trajectories",
+    "tag.precision": "Precision",
+    "tag.rehearsal": "Rehearsal",
+    "tag.impact": "Impact",
+    "tag.protection": "Protection",
+    "tag.protocol": "Protocol",
+    "tag.verification": "Verification",
 
     "common.more": "Learn more",
     "common.less": "Show less",
