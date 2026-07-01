@@ -17,7 +17,7 @@ const translations = {
     "common.more": "Saber-ne més",
     "common.less": "Saber-ne menys",
 
-    "coordinador.title": "STUNT COORDINADOR",
+    "coordinador.title": "STUNT COORDINATOR",
     "coordinador.short": "La feina d'stunt coordinator és liderar tècnicament l'acció amb visió creativa i un compromís absolut amb la seguretat. La meva funció és traduir la visió del director en seqüències viables, segures i espectaculars.",
     "coordinador.extended": [
       "Analitzo cada escena, avaluo riscos, dissenyo coreografies i estableixo protocols clars. Cada decisió impacta directament en la seguretat dels especialistes, actors i equip tècnic.",
@@ -88,7 +88,7 @@ const translations = {
     "common.more": "Saber más",
     "common.less": "Saber menos",
 
-    "coordinador.title": "STUNT COORDINADOR",
+    "coordinador.title": "STUNT COORDINATOR",
     "coordinador.short": "El trabajo de stunt coordinator es liderar técnicamente la acción con visión creativa y compromiso absoluto con la seguridad. Mi función es traducir la visión del director en secuencias viables, seguras y espectaculares.",
     "coordinador.extended": [
       "Analizo cada escena, evalúo riesgos, diseño coreografías y establezco protocolos claros. Cada decisión impacta directamente en la seguridad de especialistas, actores y equipo técnico.",
