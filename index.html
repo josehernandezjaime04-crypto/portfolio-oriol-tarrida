@@ -5,13 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Oriol Tarrida Homedes — Stunt Coordinator / Driver / Performer</title>
 <meta name="description" content="Oriol Tarrida Homedes — Stunt Coordinator, Stunt Driver, Stunt Performer i Armero en set. Portfolio professional d'especialista d'acció.">
+<link rel="canonical" href="https://www.orioltarrida.com/">
+<meta name="theme-color" content="#121110">
 <link rel="icon" type="image/png" href="assets/img/logo.png">
+
+<!-- Open Graph / Facebook, WhatsApp, LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.orioltarrida.com/">
+<meta property="og:title" content="Oriol Tarrida Homedes — Stunt Coordinator / Driver / Performer">
+<meta property="og:description" content="Stunt Coordinator, Stunt Driver, Stunt Performer i Armero en Set. Portfolio professional d'especialista d'acció per a cinema, publicitat i sèries.">
+<meta property="og:image" content="https://www.orioltarrida.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oriol Tarrida Homedes — Stunt Coordinator / Driver / Performer">
+<meta name="twitter:description" content="Stunt Coordinator, Stunt Driver, Stunt Performer i Armero en Set. Portfolio professional d'especialista d'acció.">
+<meta name="twitter:image" content="https://www.orioltarrida.com/assets/img/og-image.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-portrait.jpg" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress"><span></span></div>
 
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
@@ -44,7 +68,7 @@
 
   <section class="hero" id="top">
     <div class="hero-photo">
-      <img src="assets/img/hero-portrait.jpg" alt="Oriol Tarrida Homedes">
+      <img src="assets/img/hero-portrait.jpg" alt="Oriol Tarrida Homedes" fetchpriority="high">
     </div>
     <div class="hero-scrim"></div>
     <div class="hero-content">
@@ -60,6 +84,7 @@
   <section class="category" id="coordinador">
     <div class="category-media">
       <div class="carousel" data-carousel="coordinador">
+        <div class="carousel-progress" aria-hidden="true"></div>
         <div class="carousel-track">
           <img class="carousel-slide" src="assets/img/coordinador-main.jpg" alt="Stunt Coordinador">
           <img class="carousel-slide" src="assets/img/gallery/gal-coord-1.jpg" alt="">
@@ -68,6 +93,8 @@
           <img class="carousel-slide" src="assets/img/gallery/gal-coord-4.jpg" alt="">
           <img class="carousel-slide" src="assets/img/gallery/gal-coord-5.jpg" alt="">
         </div>
+        <button type="button" class="carousel-arrow carousel-arrow-prev" data-i18n-aria="carousel.prev" aria-label="Previous">&#10094;</button>
+        <button type="button" class="carousel-arrow carousel-arrow-next" data-i18n-aria="carousel.next" aria-label="Next">&#10095;</button>
       </div>
       <div class="gallery-strip" data-gallery="coordinador">
         <img src="assets/img/coordinador-main.jpg" alt="" tabindex="0" role="button" aria-label="1">
@@ -78,7 +105,7 @@
         <img src="assets/img/gallery/gal-coord-5.jpg" alt="" tabindex="0" role="button" aria-label="6">
       </div>
     </div>
-    <div class="category-text">
+    <div class="category-text reveal reveal-stagger">
       <span class="cat-index">01</span>
       <h2 data-i18n="coordinador.title">STUNT COORDINADOR</h2>
       <p class="cat-short" data-i18n="coordinador.short"></p>
@@ -91,7 +118,7 @@
     <div class="category-media">
       <img src="assets/img/driver-main.jpg" alt="Stunt Driver">
     </div>
-    <div class="category-text">
+    <div class="category-text reveal reveal-stagger">
       <span class="cat-index">02</span>
       <h2 data-i18n="driver.title">STUNT DRIVER</h2>
       <p class="cat-short" data-i18n="driver.short"></p>
@@ -107,7 +134,7 @@
         <p data-i18n="performer.soon">Fotografies properament</p>
       </div>
     </div>
-    <div class="category-text">
+    <div class="category-text reveal reveal-stagger">
       <span class="cat-index">03</span>
       <h2 data-i18n="performer.title">STUNT PERFORMER</h2>
       <p class="cat-short" data-i18n="performer.short"></p>
@@ -119,6 +146,7 @@
   <section class="category reverse" id="armero">
     <div class="category-media">
       <div class="carousel" data-carousel="armero">
+        <div class="carousel-progress" aria-hidden="true"></div>
         <div class="carousel-track">
           <img class="carousel-slide" src="assets/img/armero-tactical.jpg" alt="Armero en set">
           <img class="carousel-slide" src="assets/img/armero-western.jpg" alt="">
@@ -126,6 +154,8 @@
           <img class="carousel-slide" src="assets/img/gallery/gal-armero-2.jpg" alt="">
           <img class="carousel-slide" src="assets/img/gallery/gal-armero-3.jpg" alt="">
         </div>
+        <button type="button" class="carousel-arrow carousel-arrow-prev" data-i18n-aria="carousel.prev" aria-label="Previous">&#10094;</button>
+        <button type="button" class="carousel-arrow carousel-arrow-next" data-i18n-aria="carousel.next" aria-label="Next">&#10095;</button>
       </div>
       <div class="gallery-strip" data-gallery="armero">
         <img src="assets/img/armero-tactical.jpg" alt="" tabindex="0" role="button" aria-label="1">
@@ -135,7 +165,7 @@
         <img src="assets/img/gallery/gal-armero-3.jpg" alt="" tabindex="0" role="button" aria-label="5">
       </div>
     </div>
-    <div class="category-text">
+    <div class="category-text reveal reveal-stagger">
       <span class="cat-index">04</span>
       <h2 data-i18n="armero.title">ARMERO EN SET</h2>
       <p class="cat-short" data-i18n="armero.short"></p>
@@ -144,16 +174,27 @@
     </div>
   </section>
 
+  <section class="showreel" id="showreel">
+    <div class="showreel-inner reveal">
+      <p class="eyebrow" data-i18n="showreel.eyebrow">Showreel</p>
+      <h2 data-i18n="showreel.title">L'acció, en moviment</h2>
+      <div class="showreel-frame">
+        <span class="showreel-play" aria-hidden="true"></span>
+        <p data-i18n="showreel.soon">Vídeo disponible properament</p>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
     <div class="contact-inner">
-      <div class="contact-photo">
+      <div class="contact-photo reveal">
         <div class="contact-photo-frame">
           <img src="assets/img/hero-portrait.jpg" alt="Oriol Tarrida Homedes">
           <div class="photo-scrim"></div>
           <div class="photo-edge"></div>
         </div>
       </div>
-      <div class="contact-body">
+      <div class="contact-body reveal">
         <p class="eyebrow" data-i18n="contact.eyebrow">Contacte</p>
         <h2 data-i18n="contact.title">¿Parlem del teu proper projecte?</h2>
         <p class="contact-sub" data-i18n="contact.sub"></p>
@@ -193,7 +234,10 @@
           <span data-i18n="contact.form.label">Envia'm un missatge</span>
         </div>
 
-        <form class="contact-form" id="contactForm">
+        <!-- Formspree: sign up free at formspree.io with oriol@tarrida.org, create a form,
+             then replace YOUR_FORM_ID below with the ID Formspree gives you. -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="Nou missatge des de la web">
           <div class="form-row">
             <label for="cf-name" data-i18n="contact.form.name">Nom</label>
             <input type="text" id="cf-name" name="name" required>
@@ -207,6 +251,7 @@
             <textarea id="cf-message" name="message" rows="4" required></textarea>
           </div>
           <button type="submit" class="submit-btn" data-i18n="contact.form.send">Enviar</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>

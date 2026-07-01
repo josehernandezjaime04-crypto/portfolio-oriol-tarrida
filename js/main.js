@@ -1,4 +1,5 @@
 (function () {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const LANG_KEY = "oriol-portfolio-lang";
   const supported = ["ca", "es", "en"];
   let currentLang = localStorage.getItem(LANG_KEY);
@@ -42,11 +43,65 @@
 
   applyLang(currentLang);
 
-  // Header scroll state
+  // ---------------------------------------------------------------
+  // Header scroll state, scroll progress bar, hero parallax
+  // (combined into one rAF-throttled scroll handler for performance)
+  // ---------------------------------------------------------------
   const header = document.getElementById("siteHeader");
+  const progressBar = document.querySelector(".scroll-progress > span");
+  const heroPhoto = document.querySelector(".hero-photo");
+  let scrollTicking = false;
+
+  function onScrollFrame() {
+    const y = window.scrollY;
+    header.classList.toggle("scrolled", y > 20);
+
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (progressBar) {
+      const pct = docHeight > 0 ? (y / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.min(100, Math.max(0, pct))}%`;
+    }
+
+    if (heroPhoto && y < window.innerHeight && !prefersReducedMotion) {
+      heroPhoto.style.transform = `translate3d(0, ${y * 0.15}px, 0)`;
+    }
+
+    scrollTicking = false;
+  }
+
   window.addEventListener("scroll", () => {
-    header.classList.toggle("scrolled", window.scrollY > 20);
+    if (!scrollTicking) {
+      window.requestAnimationFrame(onScrollFrame);
+      scrollTicking = true;
+    }
   });
+  onScrollFrame();
+
+  // Hero content fade-up on load
+  const heroContent = document.querySelector(".hero-content");
+  if (heroContent) {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => heroContent.classList.add("loaded"));
+    });
+  }
+
+  // Scroll-reveal for sections
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in-view"));
+  }
 
   // Mobile nav
   const navToggle = document.getElementById("navToggle");
@@ -99,7 +154,6 @@
   // Auto-advancing carousels (coordinador / armero sections)
   // ---------------------------------------------------------------
   const AUTOPLAY_DELAY = 4000;
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function initCarousel(sectionEl) {
     const carousel = sectionEl.querySelector(".carousel");
@@ -111,17 +165,54 @@
     );
     if (slides.length === 0) return;
 
+    // Alternate pan direction per slide for a more organic Ken Burns feel
+    slides.forEach((slide, i) => slide.classList.add(i % 2 === 0 ? "pan-a" : "pan-b"));
+
+    // Build the Instagram-Stories-style segmented progress bar
+    const progressEl = carousel.querySelector(".carousel-progress");
+    const segments = slides.map(() => {
+      const seg = document.createElement("div");
+      seg.className = "carousel-progress-seg";
+      const fill = document.createElement("span");
+      seg.appendChild(fill);
+      if (progressEl) progressEl.appendChild(seg);
+      return fill;
+    });
+
+    const prevBtn = carousel.querySelector(".carousel-arrow-prev");
+    const nextBtn = carousel.querySelector(".carousel-arrow-next");
+
     let current = 0;
     let timerId = null;
+
+    function updateProgress() {
+      segments.forEach((fill, i) => {
+        fill.classList.remove("filling", "filled");
+        fill.style.width = "";
+        if (i < current) {
+          fill.classList.add("filled");
+        } else if (i === current) {
+          // force reflow so the transition restarts from 0 every time
+          // eslint-disable-next-line no-unused-expressions
+          fill.offsetWidth;
+          fill.classList.add("filling");
+        }
+      });
+    }
 
     function goTo(index) {
       current = ((index % slides.length) + slides.length) % slides.length;
       slides.forEach((slide, i) => slide.classList.toggle("active", i === current));
       thumbs.forEach((thumb, i) => thumb.classList.toggle("active", i === current));
+      updateProgress();
     }
 
     function next() {
       goTo(current + 1);
+    }
+
+    function prev() {
+      goTo(current - 1);
     }
 
     function startAutoplay() {
@@ -135,10 +226,20 @@
         window.clearInterval(timerId);
         timerId = null;
       }
+      // freeze the active segment's fill exactly where it is
+      const activeFill = segments[current];
+      if (activeFill && activeFill.classList.contains("filling")) {
+        const w = getComputedStyle(activeFill).width;
+        activeFill.style.width = w;
+        activeFill.classList.remove("filling");
+      }
     }
 
     // Initial state
     goTo(0);
+
+    if (prevBtn) prevBtn.addEventListener("click", () => { prev(); startAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener("click", () => { next(); startAutoplay(); });
 
     // Clicking the large slide opens the lightbox for a bigger view
     slides.forEach((slide) => {
@@ -177,16 +278,60 @@
     initCarousel(carouselEl.closest(".category"));
   });
 
-  // Contact form -> mailto
+  // Contact form -> Formspree (AJAX with mailto fallback)
   const form = document.getElementById("contactForm");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  const formStatus = document.getElementById("formStatus");
+
+  function mailtoFallback() {
     const name = document.getElementById("cf-name").value;
     const email = document.getElementById("cf-email").value;
     const message = document.getElementById("cf-message").value;
     const subject = encodeURIComponent(`Contacto web — ${name}`);
     const body = encodeURIComponent(`${message}\n\n${email}`);
     window.location.href = `mailto:oriol@tarrida.org?subject=${subject}&body=${body}`;
+  }
+
+  function setStatus(key) {
+    if (!formStatus) return;
+    const dict = translations[currentLang];
+    formStatus.textContent = dict[key] || "";
+    formStatus.dataset.state = key.split(".").pop();
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formIsConfigured = !form.action.includes("YOUR_FORM_ID");
+
+    if (!formIsConfigured) {
+      // Formspree not set up yet: fall back straight to the user's mail client
+      mailtoFallback();
+      return;
+    }
+
+    const submitBtn = form.querySelector(".submit-btn");
+    submitBtn.disabled = true;
+    setStatus("contact.form.sending");
+
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    })
+      .then((response) => {
+        if (response.ok) {
+          form.reset();
+          setStatus("contact.form.success");
+        } else {
+          throw new Error("Formspree error");
+        }
+      })
+      .catch(() => {
+        setStatus("contact.form.error");
+        mailtoFallback();
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
   });
 
   // Footer year

@@ -10,6 +10,8 @@ const translations = {
     "hero.eyebrow": "Freelance",
     "hero.roles": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
     "hero.scroll": "Baixar",
+    "carousel.prev": "Foto anterior",
+    "carousel.next": "Foto següent",
     "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
 
     "common.more": "Saber-ne més",
@@ -46,6 +48,10 @@ const translations = {
       "Aquesta feina abasta des de seqüències d'època amb armes d'avantcàrrega fins a operatius tàctics contemporanis amb equip militar i policial, adaptant sempre el protocol de seguretat al context de cada escena."
     ],
 
+    "showreel.eyebrow": "Showreel",
+    "showreel.title": "L'acció, en moviment",
+    "showreel.soon": "Vídeo disponible properament",
+
     "contact.eyebrow": "Contacte",
     "contact.title": "Parlem del teu proper projecte?",
     "contact.sub": "Disponible per a rodatges, publicitat i produccions que necessitin coordinació d'acció, stunt driving, stunt performance o gestió d'armeria en set.",
@@ -58,7 +64,10 @@ const translations = {
     "contact.form.name": "Nom",
     "contact.form.email": "Email",
     "contact.form.message": "Missatge",
-    "contact.form.send": "Enviar"
+    "contact.form.send": "Enviar",
+    "contact.form.sending": "Enviant…",
+    "contact.form.success": "Missatge enviat! Et respondré aviat.",
+    "contact.form.error": "No s'ha pogut enviar. S'obrirà el teu correu com a alternativa."
   },
 
   es: {
@@ -72,6 +81,8 @@ const translations = {
     "hero.eyebrow": "Freelance",
     "hero.roles": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
     "hero.scroll": "Bajar",
+    "carousel.prev": "Foto anterior",
+    "carousel.next": "Foto siguiente",
     "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
 
     "common.more": "Saber más",
@@ -108,6 +119,10 @@ const translations = {
       "Este trabajo abarca desde secuencias de época con armas de avancarga hasta operativos tácticos contemporáneos con equipo militar y policial, adaptando siempre el protocolo de seguridad al contexto de cada escena."
     ],
 
+    "showreel.eyebrow": "Showreel",
+    "showreel.title": "La acción, en movimiento",
+    "showreel.soon": "Vídeo disponible próximamente",
+
     "contact.eyebrow": "Contacto",
     "contact.title": "¿Hablamos de tu próximo proyecto?",
     "contact.sub": "Disponible para rodajes, publicidad y producciones que necesiten coordinación de acción, stunt driving, stunt performance o gestión de armería en set.",
@@ -120,7 +135,10 @@ const translations = {
     "contact.form.name": "Nombre",
     "contact.form.email": "Email",
     "contact.form.message": "Mensaje",
-    "contact.form.send": "Enviar"
+    "contact.form.send": "Enviar",
+    "contact.form.sending": "Enviando…",
+    "contact.form.success": "¡Mensaje enviado! Te responderé pronto.",
+    "contact.form.error": "No se ha podido enviar. Se abrirá tu correo como alternativa."
   },
 
   en: {
@@ -134,6 +152,8 @@ const translations = {
     "hero.eyebrow": "Freelance",
     "hero.roles": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
     "hero.scroll": "Scroll down",
+    "carousel.prev": "Previous photo",
+    "carousel.next": "Next photo",
     "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
 
     "common.more": "Learn more",
@@ -170,6 +190,10 @@ const translations = {
       "This work ranges from period sequences with muzzle-loading weapons to contemporary tactical operations with military and police gear, always adapting the safety protocol to the context of each scene."
     ],
 
+    "showreel.eyebrow": "Showreel",
+    "showreel.title": "The action, in motion",
+    "showreel.soon": "Video coming soon",
+
     "contact.eyebrow": "Contact",
     "contact.title": "Let's talk about your next project",
     "contact.sub": "Available for film shoots, commercials and productions that need action coordination, stunt driving, stunt performance or on-set armory management.",
@@ -182,6 +206,9 @@ const translations = {
     "contact.form.name": "Name",
     "contact.form.email": "Email",
     "contact.form.message": "Message",
-    "contact.form.send": "Send"
+    "contact.form.send": "Send",
+    "contact.form.sending": "Sending…",
+    "contact.form.success": "Message sent! I'll get back to you soon.",
+    "contact.form.error": "Couldn't send it. Opening your email as a fallback."
   }
 };
