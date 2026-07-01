@@ -147,32 +147,50 @@
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="contact-photo">
-        <img src="assets/img/hero-portrait.jpg" alt="Oriol Tarrida Homedes">
+        <div class="contact-photo-frame">
+          <img src="assets/img/hero-portrait.jpg" alt="Oriol Tarrida Homedes">
+          <div class="photo-scrim"></div>
+          <div class="photo-edge"></div>
+        </div>
       </div>
       <div class="contact-body">
         <p class="eyebrow" data-i18n="contact.eyebrow">Contacte</p>
         <h2 data-i18n="contact.title">¿Parlem del teu proper projecte?</h2>
         <p class="contact-sub" data-i18n="contact.sub"></p>
 
+        <span class="contact-section-label" data-i18n="contact.direct">Contacte directe</span>
         <div class="contact-methods">
           <a href="mailto:oriol@tarrida.org" class="contact-item">
-            <span class="contact-label" data-i18n="contact.email">Email</span>
-            <span class="contact-value">oriol@tarrida.org</span>
+            <span class="contact-icon contact-icon-mail" aria-hidden="true"></span>
+            <span class="contact-item-text">
+              <span class="contact-label" data-i18n="contact.email">Email</span>
+              <span class="contact-value">oriol@tarrida.org</span>
+            </span>
           </a>
           <a href="https://instagram.com/oriol.tarrida" target="_blank" rel="noopener" class="contact-item">
-            <span class="contact-label" data-i18n="contact.instagram">Instagram</span>
-            <span class="contact-value">@oriol.tarrida</span>
+            <span class="contact-icon contact-icon-insta" aria-hidden="true"></span>
+            <span class="contact-item-text">
+              <span class="contact-label" data-i18n="contact.instagram">Instagram</span>
+              <span class="contact-value">@oriol.tarrida</span>
+            </span>
           </a>
           <a href="tel:+34620555833" class="contact-item">
-            <span class="contact-label" data-i18n="contact.phone">Telèfon / WhatsApp</span>
-            <span class="contact-value">+34 620 555 833</span>
+            <span class="contact-icon contact-icon-phone" aria-hidden="true"></span>
+            <span class="contact-item-text">
+              <span class="contact-label" data-i18n="contact.phone">Telèfon / WhatsApp</span>
+              <span class="contact-value">+34 620 555 833</span>
+            </span>
           </a>
         </div>
 
         <div class="social-row">
           <span class="social-label" data-i18n="contact.social">Altres perfils</span>
-          <a href="https://instagram.com/creations.fx" target="_blank" rel="noopener">@creations.fx</a>
-          <a href="https://instagram.com/stuntdriveschool" target="_blank" rel="noopener">@stuntdriveschool</a>
+          <a href="https://instagram.com/creations.fx" target="_blank" rel="noopener" class="social-chip">@creations.fx</a>
+          <a href="https://instagram.com/stuntdriveschool" target="_blank" rel="noopener" class="social-chip">@stuntdriveschool</a>
+        </div>
+
+        <div class="contact-divider">
+          <span data-i18n="contact.form.label">Envia'm un missatge</span>
         </div>
 
         <form class="contact-form" id="contactForm">
@@ -197,8 +215,12 @@
 </main>
 
 <footer class="site-footer">
-  <img src="assets/img/logo.png" alt="Oriol Tarrida Homedes" class="footer-logo">
-  <p>&copy; <span id="year"></span> Oriol Tarrida Homedes</p>
+  <div class="footer-inner">
+    <img src="assets/img/logo.png" alt="Oriol Tarrida Homedes" class="footer-logo">
+    <p class="footer-tagline" data-i18n="footer.tagline">Stunt Coordinator · Stunt Performer · Stunt Driver</p>
+    <div class="footer-rule"></div>
+    <p class="footer-copy">&copy; <span id="year"></span> Oriol Tarrida Homedes</p>
+  </div>
 </footer>
 
 <div class="lightbox" id="lightbox">
