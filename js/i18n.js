@@ -59,6 +59,10 @@ const translations = {
       "Aquesta feina abasta des de seqüències d'època amb armes d'avantcàrrega fins a operatius tàctics contemporanis amb equip militar i policial, adaptant sempre el protocol de seguretat al context de cada escena."
     ],
 
+    "filmography.eyebrow": "Filmografia",
+    "filmography.title": "Projectes en pantalla",
+    "filmography.soon": "Llistat de pel·lícules disponible properament",
+
     "showreel.eyebrow": "Showreel",
     "showreel.title": "L'acció, en moviment",
     "showreel.soon": "Vídeo disponible properament",
@@ -141,6 +145,10 @@ const translations = {
       "Este trabajo abarca desde secuencias de época con armas de avancarga hasta operativos tácticos contemporáneos con equipo militar y policial, adaptando siempre el protocolo de seguridad al contexto de cada escena."
     ],
 
+    "filmography.eyebrow": "Filmografía",
+    "filmography.title": "Proyectos en pantalla",
+    "filmography.soon": "Listado de películas disponible próximamente",
+
     "showreel.eyebrow": "Showreel",
     "showreel.title": "La acción, en movimiento",
     "showreel.soon": "Vídeo disponible próximamente",
@@ -222,6 +230,10 @@ const translations = {
       "As an armorer, my commitment is to ensure every item under my supervision meets every established safety protocol. That includes a thorough check of each weapon before and after use, strict ammunition control, and clear, constant communication with the director, production and the rest of the crew.",
       "This work ranges from period sequences with muzzle-loading weapons to contemporary tactical operations with military and police gear, always adapting the safety protocol to the context of each scene."
     ],
+
+    "filmography.eyebrow": "Filmography",
+    "filmography.title": "Projects on screen",
+    "filmography.soon": "Film list coming soon",
 
     "showreel.eyebrow": "Showreel",
     "showreel.title": "The action, in motion",
