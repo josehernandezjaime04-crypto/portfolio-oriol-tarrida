@@ -139,9 +139,18 @@
 
   <section class="category" id="performer">
     <div class="category-media">
-      <div class="media-placeholder">
-        <span class="placeholder-icon">&#9679;</span>
-        <p data-i18n="performer.soon">Fotografies properament</p>
+      <div class="carousel" data-carousel="performer">
+        <div class="carousel-progress" aria-hidden="true"></div>
+        <div class="carousel-track">
+          <img class="carousel-slide" src="assets/img/performer-1.jpg" alt="Stunt Performer — full body burn">
+          <img class="carousel-slide" src="assets/img/performer-2.jpg" alt="Stunt Performer — fire ignition">
+        </div>
+        <button type="button" class="carousel-arrow carousel-arrow-prev" data-i18n-aria="carousel.prev" aria-label="Previous">&#10094;</button>
+        <button type="button" class="carousel-arrow carousel-arrow-next" data-i18n-aria="carousel.next" aria-label="Next">&#10095;</button>
+      </div>
+      <div class="gallery-strip" data-gallery="performer">
+        <img src="assets/img/performer-1.jpg" alt="" tabindex="0" role="button" aria-label="1">
+        <img src="assets/img/performer-2.jpg" alt="" tabindex="0" role="button" aria-label="2">
       </div>
     </div>
     <div class="category-text reveal reveal-stagger">
