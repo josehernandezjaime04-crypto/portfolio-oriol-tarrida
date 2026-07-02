@@ -1,7 +1,7 @@
 const translations = {
   ca: {
     "nav.home": "Inici",
-    "nav.coordinador": "Coordinació",
+    "nav.coordinador": "Stunt Coordinator",
     "nav.driver": "Stunt Driver",
     "nav.performer": "Stunt Performer",
     "nav.armero": "Armer en Set",
@@ -87,7 +87,7 @@ const translations = {
 
   es: {
     "nav.home": "Inicio",
-    "nav.coordinador": "Coordinación",
+    "nav.coordinador": "Stunt Coordinator",
     "nav.driver": "Stunt Driver",
     "nav.performer": "Stunt Performer",
     "nav.armero": "Armero en Set",
@@ -173,7 +173,7 @@ const translations = {
 
   en: {
     "nav.home": "Home",
-    "nav.coordinador": "Coordination",
+    "nav.coordinador": "Stunt Coordinator",
     "nav.driver": "Stunt Driver",
     "nav.performer": "Stunt Performer",
     "nav.armero": "Armorer on Set",
