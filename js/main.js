@@ -37,6 +37,14 @@
     document.querySelectorAll(".lang-switch button").forEach((btn) => {
       btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
     });
+
+    const footerTags = document.getElementById("footerTags");
+    if (footerTags && dict["hero.roles"]) {
+      footerTags.innerHTML = dict["hero.roles"]
+        .split("·")
+        .map((role) => `<span class="footer-tag">${role.trim()}</span>`)
+        .join("");
+    }
   }
 
   document.querySelectorAll(".lang-switch button").forEach((btn) => {

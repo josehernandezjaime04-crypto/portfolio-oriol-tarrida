@@ -12,7 +12,6 @@ const translations = {
     "hero.scroll": "Baixar",
     "carousel.prev": "Foto anterior",
     "carousel.next": "Foto següent",
-    "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
 
     "tag.safety": "Seguretat",
     "tag.choreography": "Coreografia",
@@ -98,7 +97,6 @@ const translations = {
     "hero.scroll": "Bajar",
     "carousel.prev": "Foto anterior",
     "carousel.next": "Foto siguiente",
-    "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
 
     "tag.safety": "Seguridad",
     "tag.choreography": "Coreografía",
@@ -184,7 +182,6 @@ const translations = {
     "hero.scroll": "Scroll down",
     "carousel.prev": "Previous photo",
     "carousel.next": "Next photo",
-    "footer.tagline": "Stunt Coordinator · Stunt Performer · Stunt Driver · Armorer on Set",
 
     "tag.safety": "Safety",
     "tag.choreography": "Choreography",

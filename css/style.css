@@ -543,10 +543,16 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   display:flex;flex-direction:column;align-items:center;gap:16px;
 }
 .footer-logo{height:44px;width:auto;opacity:0.9;}
-.footer-tagline{
-  font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream-dim);
+
+.footer-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:420px;}
+.footer-tag{
+  border:1px solid var(--line);border-radius:20px;padding:6px 14px;
+  font-size:0.68rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream-dim);
+  transition:border-color .25s ease, color .25s ease;
 }
-.footer-rule{width:44px;height:1px;background:var(--line);margin:4px 0;}
+.footer-tag:hover{border-color:var(--gold);color:var(--cream);}
+
+.footer-rule{width:44px;height:1px;background:var(--line);margin:6px 0 2px;}
 .footer-copy{font-size:0.76rem;color:var(--grey);letter-spacing:0.04em;}
 
 /* ---------- Lightbox ---------- */
