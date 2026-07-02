@@ -1,0 +1,11 @@
+Pon aqui los videos del showreel, cada uno en su carpeta segun la categoria:
+
+- coordinador/   -> videos de Stunt Coordinador
+- driver/        -> videos de Stunt Driver
+- performer/     -> videos de Stunt Performer
+- armero/        -> videos de Armero en Set
+
+Puedes poner varios videos en cada carpeta (el carrusel los mostrara todos, pasando de uno a otro).
+Formato recomendado: mp4, lo mas comprimido posible sin perder calidad (los videos pesan mucho, cuanto mas ligeros mejor para que la web cargue rapido).
+
+Cuando hayas puesto los que quieras, dimelo y los integro.

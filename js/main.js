@@ -304,6 +304,107 @@
     initCarousel(carouselEl.closest(".category"));
   });
 
+  // ---------------------------------------------------------------
+  // Showreel: tab-filtered coverflow video carousel
+  // ---------------------------------------------------------------
+  // Fill these in once video files are available, e.g.:
+  // coordinador: [
+  //   { src: "assets/videos/coordinador-1.mp4", poster: "assets/img/coordinador-main.jpg" },
+  //   { src: "assets/videos/coordinador-2.mp4" },
+  // ],
+  const videoLibrary = {
+    coordinador: [],
+    driver: [],
+    performer: [],
+    armero: [],
+  };
+
+  function initShowreel() {
+    const track = document.getElementById("showreelTrack");
+    if (!track) return;
+
+    const tabs = document.querySelectorAll(".showreel-tab");
+    const prevBtn = document.querySelector(".showreel-nav-prev");
+    const nextBtn = document.querySelector(".showreel-nav-next");
+
+    let currentCat = tabs[0] ? tabs[0].dataset.videoCat : "coordinador";
+    let currentIndex = 0;
+
+    function render() {
+      const videos = videoLibrary[currentCat] || [];
+      track.innerHTML = "";
+
+      if (videos.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "showreel-empty";
+        empty.innerHTML =
+          '<span class="showreel-play" aria-hidden="true"></span><p data-i18n="showreel.soon"></p>';
+        empty.querySelector("p").textContent =
+          translations[currentLang]["showreel.soon"];
+        track.appendChild(empty);
+        return;
+      }
+
+      videos.forEach((video, i) => {
+        let offset = i - currentIndex;
+        const half = Math.floor(videos.length / 2);
+        if (offset > half) offset -= videos.length;
+        if (offset < -half) offset += videos.length;
+
+        const item = document.createElement("div");
+        item.className =
+          "showreel-item " +
+          (offset === 0 ? "is-center" : Math.abs(offset) === 1 ? "is-near" : "is-far");
+        item.style.setProperty("--offset", offset);
+
+        const vid = document.createElement("video");
+        vid.src = video.src;
+        if (video.poster) vid.poster = video.poster;
+        vid.playsInline = true;
+        vid.muted = offset !== 0;
+        if (offset === 0) {
+          vid.controls = true;
+          vid.autoplay = true;
+          vid.addEventListener("ended", () => goTo(currentIndex + 1));
+        } else {
+          vid.loop = true;
+        }
+        item.appendChild(vid);
+
+        if (offset !== 0) {
+          item.addEventListener("click", () => goTo(i));
+        }
+
+        track.appendChild(item);
+      });
+    }
+
+    function goTo(index) {
+      const videos = videoLibrary[currentCat] || [];
+      if (videos.length === 0) return;
+      currentIndex = ((index % videos.length) + videos.length) % videos.length;
+      render();
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        if (tab.dataset.videoCat === currentCat) return;
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        currentCat = tab.dataset.videoCat;
+        currentIndex = 0;
+        render();
+      });
+    });
+
+    if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+    if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+
+    render();
+  }
+
+  initShowreel();
+
   // Contact form -> Formspree (AJAX with mailto fallback)
   const form = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");

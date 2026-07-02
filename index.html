@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero-portrait.jpg" fetchpriority="high">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -230,9 +230,18 @@
     <div class="showreel-inner reveal">
       <p class="eyebrow" data-i18n="showreel.eyebrow">Showreel</p>
       <h2 data-i18n="showreel.title">L'acció, en moviment</h2>
-      <div class="showreel-frame">
-        <span class="showreel-play" aria-hidden="true"></span>
-        <p data-i18n="showreel.soon">Vídeo disponible properament</p>
+
+      <div class="showreel-tabs" role="tablist">
+        <button type="button" class="showreel-tab active" data-video-cat="coordinador" data-i18n="nav.coordinador">Stunt Coordinator</button>
+        <button type="button" class="showreel-tab" data-video-cat="driver" data-i18n="nav.driver">Stunt Driver</button>
+        <button type="button" class="showreel-tab" data-video-cat="performer" data-i18n="nav.performer">Stunt Performer</button>
+        <button type="button" class="showreel-tab" data-video-cat="armero" data-i18n="nav.armero">Armer en Set</button>
+      </div>
+
+      <div class="showreel-stage">
+        <button type="button" class="showreel-nav showreel-nav-prev" data-i18n-aria="carousel.prev" aria-label="Previous">&#10094;</button>
+        <div class="showreel-track" id="showreelTrack"></div>
+        <button type="button" class="showreel-nav showreel-nav-next" data-i18n-aria="carousel.next" aria-label="Next">&#10095;</button>
       </div>
     </div>
   </section>
@@ -326,6 +335,6 @@
 </div>
 
 <script src="js/i18n.js?v=5"></script>
-<script src="js/main.js?v=5"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ Pon aqui las fotos, cada una en su carpeta:
 - performer/     -> fotos para Stunt Performer
 - armero/        -> fotos para Armero en Set
 - filmografia/   -> carteles o fotogramas de peliculas (si puedes, nombra el archivo igual que la pelicula, ej: "Nombre de la pelicula.jpg")
-- showreel/      -> el video cuando lo tengas (mp4)
+
+Los videos del showreel van en otra carpeta: assets/videos/incoming/ (una subcarpeta por categoria).
 
 Cuando hayas puesto lo que quieras, dimelo y las integro en la web.
