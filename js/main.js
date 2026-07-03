@@ -329,10 +329,53 @@
 
     let currentCat = tabs[0] ? tabs[0].dataset.videoCat : "coordinador";
     let currentIndex = 0;
+    let entries = []; // { el, video } — kept alive across goTo() so CSS transitions can animate
 
-    function render() {
-      const videos = videoLibrary[currentCat] || [];
+    // Positive offset = already played, parked on the right.
+    // Negative offset = queued up next, waiting on the left.
+    function computeOffset(i) {
+      const total = entries.length;
+      let offset = currentIndex - i;
+      const half = Math.floor(total / 2);
+      if (offset > half) offset -= total;
+      if (offset < -half) offset += total;
+      return offset;
+    }
+
+    function applyState() {
+      entries.forEach((entry, i) => {
+        const offset = computeOffset(i);
+        entry.el.className =
+          "showreel-item " +
+          (offset === 0 ? "is-center" : Math.abs(offset) === 1 ? "is-near" : "is-far");
+        entry.el.style.setProperty("--offset", offset);
+
+        if (offset === 0) {
+          entry.video.muted = true;
+          entry.video.controls = true;
+          entry.video.currentTime = 0;
+          const p = entry.video.play();
+          if (p && p.catch) p.catch(() => {});
+        } else {
+          entry.video.pause();
+          entry.video.muted = true;
+          entry.video.controls = false;
+        }
+      });
+    }
+
+    function goTo(index) {
+      const total = entries.length;
+      if (total === 0) return;
+      currentIndex = ((index % total) + total) % total;
+      applyState();
+    }
+
+    function build() {
       track.innerHTML = "";
+      entries = [];
+      currentIndex = 0;
+      const videos = videoLibrary[currentCat] || [];
 
       if (videos.length === 0) {
         const empty = document.createElement("div");
@@ -346,44 +389,29 @@
       }
 
       videos.forEach((video, i) => {
-        let offset = i - currentIndex;
-        const half = Math.floor(videos.length / 2);
-        if (offset > half) offset -= videos.length;
-        if (offset < -half) offset += videos.length;
-
         const item = document.createElement("div");
-        item.className =
-          "showreel-item " +
-          (offset === 0 ? "is-center" : Math.abs(offset) === 1 ? "is-near" : "is-far");
-        item.style.setProperty("--offset", offset);
+        item.className = "showreel-item";
 
         const vid = document.createElement("video");
         vid.src = video.src;
         if (video.poster) vid.poster = video.poster;
         vid.playsInline = true;
-        vid.muted = offset !== 0;
-        if (offset === 0) {
-          vid.controls = true;
-          vid.autoplay = true;
-          vid.addEventListener("ended", () => goTo(currentIndex + 1));
-        } else {
-          vid.loop = true;
-        }
+        vid.muted = true;
+        vid.preload = "metadata";
+        vid.addEventListener("ended", () => {
+          if (computeOffset(i) === 0) goTo(currentIndex + 1);
+        });
         item.appendChild(vid);
 
-        if (offset !== 0) {
-          item.addEventListener("click", () => goTo(i));
-        }
+        item.addEventListener("click", () => {
+          if (computeOffset(i) !== 0) goTo(i);
+        });
 
         track.appendChild(item);
+        entries.push({ el: item, video: vid });
       });
-    }
 
-    function goTo(index) {
-      const videos = videoLibrary[currentCat] || [];
-      if (videos.length === 0) return;
-      currentIndex = ((index % videos.length) + videos.length) % videos.length;
-      render();
+      applyState();
     }
 
     tabs.forEach((tab) => {
@@ -392,15 +420,14 @@
         tabs.forEach((t) => t.classList.remove("active"));
         tab.classList.add("active");
         currentCat = tab.dataset.videoCat;
-        currentIndex = 0;
-        render();
+        build();
       });
     });
 
     if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
     if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
 
-    render();
+    build();
   }
 
   initShowreel();
