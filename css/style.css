@@ -320,6 +320,8 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
 .filmography{background:var(--bg-alt);padding:12vh 24px 10vh;border-top:1px solid var(--line);}
 .filmography-head{max-width:var(--maxw);margin:0 auto 44px;text-align:center;}
 .filmography-head h2{font-size:clamp(2rem,4vw,2.8rem);margin-top:10px;color:var(--cream);}
+.film-count{margin-top:14px;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);}
+.film-count strong{color:var(--gold);font-weight:500;}
 
 .film-grid{
   max-width:1800px;margin:0 auto;
@@ -327,17 +329,19 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
 }
 .film-card{
   position:relative;display:block;aspect-ratio:2/3;border-radius:4px;overflow:hidden;
-  background:#000;z-index:1;
-  transition:transform .45s cubic-bezier(.19,1,.22,1), box-shadow .45s ease, z-index 0s;
+  background:#000;z-index:1;border:1px solid rgba(236,225,203,0.08);
+  transition:transform .45s cubic-bezier(.19,1,.22,1), box-shadow .45s ease, border-color .3s ease, opacity .6s ease, z-index 0s;
 }
 .film-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.19,1,.22,1), filter .3s ease;filter:grayscale(0.3) brightness(0.82);}
 .film-card:hover img{transform:scale(1.06);filter:none;}
+.film-card:hover{border-color:rgba(185,154,61,0.55);}
 .film-card::after{
   content:"";position:absolute;inset:0;
   background:linear-gradient(to top, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.1) 55%);
 }
 .film-card.is-focused{
   transform:scale(1.38);z-index:5;
+  border-color:rgba(185,154,61,0.8);
   box-shadow:0 32px 70px -14px rgba(0,0,0,0.8);
 }
 

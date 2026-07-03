@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero-portrait.jpg" fetchpriority="high">
-<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/style.css?v=9">
 </head>
 <body>
 
@@ -217,243 +217,244 @@
     <div class="filmography-head reveal">
       <p class="eyebrow" data-i18n="filmography.eyebrow">Filmografia</p>
       <h2 data-i18n="filmography.title">Projectes en pantalla</h2>
+      <p class="film-count" id="filmCount"></p>
     </div>
-    <div class="film-grid reveal">
-      <div class="film-card">
-        <img src="assets/img/films/la-octava-dimension.jpg" alt="La Octava Dimensión" loading="lazy">
-        <span class="film-title">La Octava Dimensión</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/cucut.jpg" alt="Cucut" loading="lazy">
-        <span class="film-title">Cucut</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/villorrio-del-caudillo-paletos-y-cuchillos.jpg" alt="Villorrio del Caudillo: Paletos y Cuchillos" loading="lazy">
-        <span class="film-title">Villorrio del Caudillo: Paletos y Cuchillos</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/el-cuerpo.jpg" alt="El Cuerpo" loading="lazy">
-        <span class="film-title">El Cuerpo</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/el-47.jpg" alt="El 47" loading="lazy">
-        <span class="film-title">El 47</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/33-dias.jpg" alt="33 Días" loading="lazy">
-        <span class="film-title">33 Días</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/el-cuerpo-en-llamas.jpg" alt="El Cuerpo en Llamas" loading="lazy">
-        <span class="film-title">El Cuerpo en Llamas</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/los-herederos-de-la-tierra.jpg" alt="Los Herederos de la Tierra" loading="lazy">
-        <span class="film-title">Los Herederos de la Tierra</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/malnazidos.jpg" alt="Malnazidos" loading="lazy">
-        <span class="film-title">Malnazidos</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/la-catedral-del-mar.jpg" alt="La Catedral del Mar" loading="lazy">
-        <span class="film-title">La Catedral del Mar</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/sweet-home.jpg" alt="Sweet Home" loading="lazy">
-        <span class="film-title">Sweet Home</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/bajocero.jpg" alt="Bajocero" loading="lazy">
-        <span class="film-title">Bajocero</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/bienvenidos-a-eden.jpg" alt="Bienvenidos a Edén" loading="lazy">
-        <span class="film-title">Bienvenidos a Edén</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/no-mataras.jpg" alt="No Matarás" loading="lazy">
-        <span class="film-title">No Matarás</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/ciudad-de-sombras.jpg" alt="Ciudad de Sombras" loading="lazy">
-        <span class="film-title">Ciudad de Sombras</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/la-vampira-de-barcelona.jpg" alt="La Vampira de Barcelona" loading="lazy">
-        <span class="film-title">La Vampira de Barcelona</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/incidencias.jpg" alt="Incidencias" loading="lazy">
-        <span class="film-title">Incidencias</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/olor-de-colonia.jpg" alt="Olor de Colònia" loading="lazy">
-        <span class="film-title">Olor de Colònia</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/aixo-no-es-suecia.jpg" alt="Això No És Suècia" loading="lazy">
-        <span class="film-title">Això No És Suècia</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/wasp-network.jpg" alt="Wasp Network" loading="lazy">
-        <span class="film-title">Wasp Network</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/legado-en-los-huesos.jpg" alt="Legado en los Huesos" loading="lazy">
-        <span class="film-title">Legado en los Huesos</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/blood-metal-revenge.jpg" alt="Blood Metal Revenge" loading="lazy">
-        <span class="film-title">Blood Metal Revenge</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/ismael.jpg" alt="Ismael" loading="lazy">
-        <span class="film-title">Ismael</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/hache.jpg" alt="Hache" loading="lazy">
-        <span class="film-title">Hache</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/girls-with-balls.jpg" alt="Girls with Balls" loading="lazy">
-        <span class="film-title">Girls with Balls</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/modelo-77.jpg" alt="Modelo 77" loading="lazy">
-        <span class="film-title">Modelo 77</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/murieron-por-encima-de-sus-posibilidades.jpg" alt="Murieron por Encima de sus Posibilidades" loading="lazy">
-        <span class="film-title">Murieron por Encima de sus Posibilidades</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/origenes-secretos.jpg" alt="Orígenes Secretos" loading="lazy">
-        <span class="film-title">Orígenes Secretos</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/superlopez.jpg" alt="Superlópez" loading="lazy">
-        <span class="film-title">Superlópez</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/perdona-si-te-llamo-amor.jpg" alt="Perdona si Te Llamo Amor" loading="lazy">
-        <span class="film-title">Perdona si Te Llamo Amor</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/loco-por-ella.jpg" alt="Loco por Ella" loading="lazy">
-        <span class="film-title">Loco por Ella</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/sin-huellas.jpg" alt="Sin Huellas" loading="lazy">
-        <span class="film-title">Sin Huellas</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/summer-camp.jpg" alt="Summer Camp" loading="lazy">
-        <span class="film-title">Summer Camp</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/ruta-salvatge.jpg" alt="Ruta Salvatge" loading="lazy">
-        <span class="film-title">Ruta Salvatge</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/rec4-apocalipsis.jpg" alt="[REC]4: Apocalipsis" loading="lazy">
-        <span class="film-title">[REC]4: Apocalipsis</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/el-pregon.jpg" alt="El Pregón" loading="lazy">
-        <span class="film-title">El Pregón</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/la-nina-de-la-comunion.jpg" alt="La Niña de la Comunión" loading="lazy">
-        <span class="film-title">La Niña de la Comunión</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/piratas-el-tesoro-perdido-de-yanez-el-sanguinario.jpg" alt="Piratas: El Tesoro Perdido de Yáñez el Sanguinario" loading="lazy">
-        <span class="film-title">Piratas: El Tesoro Perdido de Yáñez el Sanguinario</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/tu-tambien-lo-harias.jpg" alt="Tú También lo Harías" loading="lazy">
-        <span class="film-title">Tú También lo Harías</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/ebro-de-la-cuna-a-la-batalla.jpg" alt="Ebro: De la Cuna a la Batalla" loading="lazy">
-        <span class="film-title">Ebro: De la Cuna a la Batalla</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/contratiempo.jpg" alt="Contratiempo" loading="lazy">
-        <span class="film-title">Contratiempo</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/fanatico.jpg" alt="Fanático" loading="lazy">
-        <span class="film-title">Fanático</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/polseres-vermelles.jpg" alt="Polseres Vermelles" loading="lazy">
-        <span class="film-title">Polseres Vermelles</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/el-dia-de-manana.jpg" alt="El Día de Mañana" loading="lazy">
-        <span class="film-title">El Día de Mañana</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/ofrenda-a-la-tormenta.jpg" alt="Ofrenda a la Tormenta" loading="lazy">
-        <span class="film-title">Ofrenda a la Tormenta</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/un-novio-para-mi-mujer.jpg" alt="Un Novio para mi Mujer" loading="lazy">
-        <span class="film-title">Un Novio para mi Mujer</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/mira-lo-que-has-hecho.jpg" alt="Mira lo que Has Hecho" loading="lazy">
-        <span class="film-title">Mira lo que Has Hecho</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/indomable.jpg" alt="Indomable" loading="lazy">
-        <span class="film-title">Indomable</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/the-pelayos.jpg" alt="The Pelayos" loading="lazy">
-        <span class="film-title">The Pelayos</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/solo-quimica.jpg" alt="Solo Química" loading="lazy">
-        <span class="film-title">Solo Química</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/the-diplomat.jpg" alt="The Diplomat" loading="lazy">
-        <span class="film-title">The Diplomat</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/mindscape.jpg" alt="Mindscape" loading="lazy">
-        <span class="film-title">Mindscape</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/mano-de-hierro.jpg" alt="Mano de Hierro" loading="lazy">
-        <span class="film-title">Mano de Hierro</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/sirat.jpg" alt="Sirāt" loading="lazy">
-        <span class="film-title">Sirāt</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/la-fossa.jpg" alt="La Fossa" loading="lazy">
-        <span class="film-title">La Fossa</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/exode.jpg" alt="Èxode" loading="lazy">
-        <span class="film-title">Èxode</span>
-      </div>
-      <div class="film-card">
-        <img src="assets/img/films/anacleto-agente-secreto.jpg" alt="Anacleto: Agente Secreto" loading="lazy">
-        <span class="film-title">Anacleto: Agente Secreto</span>
-      </div>
-      <div class="film-card">
+    <div class="film-grid">
+            <div class="film-card reveal">
         <img src="assets/img/films/3-bodas-de-mas.jpg" alt="3 Bodas de Más" loading="lazy">
         <span class="film-title">3 Bodas de Más</span>
       </div>
-      <div class="film-card">
+      <div class="film-card reveal">
+        <img src="assets/img/films/33-dias.jpg" alt="33 Días" loading="lazy">
+        <span class="film-title">33 Días</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/aixo-no-es-suecia.jpg" alt="Això No És Suècia" loading="lazy">
+        <span class="film-title">Això No És Suècia</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/anacleto-agente-secreto.jpg" alt="Anacleto: Agente Secreto" loading="lazy">
+        <span class="film-title">Anacleto: Agente Secreto</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/bajocero.jpg" alt="Bajocero" loading="lazy">
+        <span class="film-title">Bajocero</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/bienvenidos-a-eden.jpg" alt="Bienvenidos a Edén" loading="lazy">
+        <span class="film-title">Bienvenidos a Edén</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/blood-metal-revenge.jpg" alt="Blood Metal Revenge" loading="lazy">
+        <span class="film-title">Blood Metal Revenge</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/ciudad-de-sombras.jpg" alt="Ciudad de Sombras" loading="lazy">
+        <span class="film-title">Ciudad de Sombras</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/contratiempo.jpg" alt="Contratiempo" loading="lazy">
+        <span class="film-title">Contratiempo</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/cucut.jpg" alt="Cucut" loading="lazy">
+        <span class="film-title">Cucut</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/ebro-de-la-cuna-a-la-batalla.jpg" alt="Ebro: De la Cuna a la Batalla" loading="lazy">
+        <span class="film-title">Ebro: De la Cuna a la Batalla</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/el-47.jpg" alt="El 47" loading="lazy">
+        <span class="film-title">El 47</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/el-cuerpo.jpg" alt="El Cuerpo" loading="lazy">
+        <span class="film-title">El Cuerpo</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/el-cuerpo-en-llamas.jpg" alt="El Cuerpo en Llamas" loading="lazy">
+        <span class="film-title">El Cuerpo en Llamas</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/el-dia-de-manana.jpg" alt="El Día de Mañana" loading="lazy">
+        <span class="film-title">El Día de Mañana</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/el-pregon.jpg" alt="El Pregón" loading="lazy">
+        <span class="film-title">El Pregón</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/exode.jpg" alt="Èxode" loading="lazy">
+        <span class="film-title">Èxode</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/fanatico.jpg" alt="Fanático" loading="lazy">
+        <span class="film-title">Fanático</span>
+      </div>
+      <div class="film-card reveal">
         <img src="assets/img/films/foodie-love.jpg" alt="Foodie Love" loading="lazy">
         <span class="film-title">Foodie Love</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/girls-with-balls.jpg" alt="Girls with Balls" loading="lazy">
+        <span class="film-title">Girls with Balls</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/hache.jpg" alt="Hache" loading="lazy">
+        <span class="film-title">Hache</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/incidencias.jpg" alt="Incidencias" loading="lazy">
+        <span class="film-title">Incidencias</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/indomable.jpg" alt="Indomable" loading="lazy">
+        <span class="film-title">Indomable</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/ismael.jpg" alt="Ismael" loading="lazy">
+        <span class="film-title">Ismael</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/la-catedral-del-mar.jpg" alt="La Catedral del Mar" loading="lazy">
+        <span class="film-title">La Catedral del Mar</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/la-fossa.jpg" alt="La Fossa" loading="lazy">
+        <span class="film-title">La Fossa</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/la-nina-de-la-comunion.jpg" alt="La Niña de la Comunión" loading="lazy">
+        <span class="film-title">La Niña de la Comunión</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/la-octava-dimension.jpg" alt="La Octava Dimensión" loading="lazy">
+        <span class="film-title">La Octava Dimensión</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/la-vampira-de-barcelona.jpg" alt="La Vampira de Barcelona" loading="lazy">
+        <span class="film-title">La Vampira de Barcelona</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/legado-en-los-huesos.jpg" alt="Legado en los Huesos" loading="lazy">
+        <span class="film-title">Legado en los Huesos</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/loco-por-ella.jpg" alt="Loco por Ella" loading="lazy">
+        <span class="film-title">Loco por Ella</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/los-herederos-de-la-tierra.jpg" alt="Los Herederos de la Tierra" loading="lazy">
+        <span class="film-title">Los Herederos de la Tierra</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/malnazidos.jpg" alt="Malnazidos" loading="lazy">
+        <span class="film-title">Malnazidos</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/mano-de-hierro.jpg" alt="Mano de Hierro" loading="lazy">
+        <span class="film-title">Mano de Hierro</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/mindscape.jpg" alt="Mindscape" loading="lazy">
+        <span class="film-title">Mindscape</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/mira-lo-que-has-hecho.jpg" alt="Mira lo que Has Hecho" loading="lazy">
+        <span class="film-title">Mira lo que Has Hecho</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/modelo-77.jpg" alt="Modelo 77" loading="lazy">
+        <span class="film-title">Modelo 77</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/murieron-por-encima-de-sus-posibilidades.jpg" alt="Murieron por Encima de sus Posibilidades" loading="lazy">
+        <span class="film-title">Murieron por Encima de sus Posibilidades</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/no-mataras.jpg" alt="No Matarás" loading="lazy">
+        <span class="film-title">No Matarás</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/ofrenda-a-la-tormenta.jpg" alt="Ofrenda a la Tormenta" loading="lazy">
+        <span class="film-title">Ofrenda a la Tormenta</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/olor-de-colonia.jpg" alt="Olor de Colònia" loading="lazy">
+        <span class="film-title">Olor de Colònia</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/origenes-secretos.jpg" alt="Orígenes Secretos" loading="lazy">
+        <span class="film-title">Orígenes Secretos</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/perdona-si-te-llamo-amor.jpg" alt="Perdona si Te Llamo Amor" loading="lazy">
+        <span class="film-title">Perdona si Te Llamo Amor</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/piratas-el-tesoro-perdido-de-yanez-el-sanguinario.jpg" alt="Piratas: El Tesoro Perdido de Yáñez el Sanguinario" loading="lazy">
+        <span class="film-title">Piratas: El Tesoro Perdido de Yáñez el Sanguinario</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/polseres-vermelles.jpg" alt="Polseres Vermelles" loading="lazy">
+        <span class="film-title">Polseres Vermelles</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/rec4-apocalipsis.jpg" alt="[REC]4: Apocalipsis" loading="lazy">
+        <span class="film-title">[REC]4: Apocalipsis</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/ruta-salvatge.jpg" alt="Ruta Salvatge" loading="lazy">
+        <span class="film-title">Ruta Salvatge</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/sin-huellas.jpg" alt="Sin Huellas" loading="lazy">
+        <span class="film-title">Sin Huellas</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/sirat.jpg" alt="Sirāt" loading="lazy">
+        <span class="film-title">Sirāt</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/solo-quimica.jpg" alt="Solo Química" loading="lazy">
+        <span class="film-title">Solo Química</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/summer-camp.jpg" alt="Summer Camp" loading="lazy">
+        <span class="film-title">Summer Camp</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/superlopez.jpg" alt="Superlópez" loading="lazy">
+        <span class="film-title">Superlópez</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/sweet-home.jpg" alt="Sweet Home" loading="lazy">
+        <span class="film-title">Sweet Home</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/the-diplomat.jpg" alt="The Diplomat" loading="lazy">
+        <span class="film-title">The Diplomat</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/the-pelayos.jpg" alt="The Pelayos" loading="lazy">
+        <span class="film-title">The Pelayos</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/tu-tambien-lo-harias.jpg" alt="Tú También lo Harías" loading="lazy">
+        <span class="film-title">Tú También lo Harías</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/un-novio-para-mi-mujer.jpg" alt="Un Novio para mi Mujer" loading="lazy">
+        <span class="film-title">Un Novio para mi Mujer</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/villorrio-del-caudillo-paletos-y-cuchillos.jpg" alt="Villorrio del Caudillo: Paletos y Cuchillos" loading="lazy">
+        <span class="film-title">Villorrio del Caudillo: Paletos y Cuchillos</span>
+      </div>
+      <div class="film-card reveal">
+        <img src="assets/img/films/wasp-network.jpg" alt="Wasp Network" loading="lazy">
+        <span class="film-title">Wasp Network</span>
       </div>
     </div>
   </section>
@@ -566,7 +567,7 @@
   <img src="" alt="" id="lightboxImg">
 </div>
 
-<script src="js/i18n.js?v=5"></script>
-<script src="js/main.js?v=8"></script>
+<script src="js/i18n.js?v=6"></script>
+<script src="js/main.js?v=9"></script>
 </body>
 </html>

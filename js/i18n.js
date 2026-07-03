@@ -61,6 +61,7 @@ const translations = {
     "filmography.eyebrow": "Filmografia",
     "filmography.title": "Projectes en pantalla",
     "filmography.soon": "Llistat de pel·lícules disponible properament",
+    "filmography.countLabel": "produccions",
 
     "showreel.eyebrow": "Showreel",
     "showreel.title": "L'acció, en moviment",
@@ -146,6 +147,7 @@ const translations = {
     "filmography.eyebrow": "Filmografía",
     "filmography.title": "Proyectos en pantalla",
     "filmography.soon": "Listado de películas disponible próximamente",
+    "filmography.countLabel": "producciones",
 
     "showreel.eyebrow": "Showreel",
     "showreel.title": "La acción, en movimiento",
@@ -231,6 +233,7 @@ const translations = {
     "filmography.eyebrow": "Filmography",
     "filmography.title": "Projects on screen",
     "filmography.soon": "Film list coming soon",
+    "filmography.countLabel": "productions",
 
     "showreel.eyebrow": "Showreel",
     "showreel.title": "The action, in motion",

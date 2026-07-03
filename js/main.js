@@ -45,6 +45,12 @@
         .map((role) => `<span class="footer-tag">${role.trim()}</span>`)
         .join("");
     }
+
+    const filmCount = document.getElementById("filmCount");
+    if (filmCount && dict["filmography.countLabel"]) {
+      const n = document.querySelectorAll(".film-card").length;
+      filmCount.innerHTML = `<strong>${n}</strong> ${dict["filmography.countLabel"]}`;
+    }
   }
 
   document.querySelectorAll(".lang-switch button").forEach((btn) => {
