@@ -432,6 +432,18 @@
 
   initShowreel();
 
+  // Film cards: zoom in a bit more after hovering for 2s straight
+  document.querySelectorAll(".film-card").forEach((card) => {
+    let hoverTimer = null;
+    card.addEventListener("mouseenter", () => {
+      hoverTimer = window.setTimeout(() => card.classList.add("is-focused"), 2000);
+    });
+    card.addEventListener("mouseleave", () => {
+      window.clearTimeout(hoverTimer);
+      card.classList.remove("is-focused");
+    });
+  });
+
   // Contact form -> Formspree (AJAX with mailto fallback)
   const form = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
