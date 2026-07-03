@@ -351,7 +351,7 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
 }
 .film-title{
   position:absolute;left:12px;right:12px;bottom:10px;z-index:2;
-  font-family:var(--ff-display);font-size:0.82rem;font-weight:400;letter-spacing:0.02em;color:var(--cream);
+  font-family:var(--ff-display);font-size:1.02rem;font-weight:400;letter-spacing:0.02em;color:var(--cream);
   line-height:1.15;text-transform:uppercase;
 }
 
