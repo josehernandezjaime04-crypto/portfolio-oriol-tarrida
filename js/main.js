@@ -366,6 +366,7 @@
     const tabs = document.querySelectorAll(".showreel-tab");
     const prevBtn = document.querySelector(".showreel-nav-prev");
     const nextBtn = document.querySelector(".showreel-nav-next");
+    const counterEl = document.getElementById("showreelCounter");
 
     let currentCat = tabs[0] ? tabs[0].dataset.videoCat : "coordinador";
     let currentIndex = 0;
@@ -402,6 +403,13 @@
           entry.video.controls = false;
         }
       });
+
+      if (counterEl) {
+        counterEl.innerHTML =
+          entries.length > 1
+            ? `<strong>${currentIndex + 1}</strong> / ${entries.length}`
+            : "";
+      }
     }
 
     function goTo(index) {
@@ -425,6 +433,7 @@
         empty.querySelector("p").textContent =
           translations[currentLang]["showreel.soon"];
         track.appendChild(empty);
+        if (counterEl) counterEl.innerHTML = "";
         return;
       }
 
@@ -464,8 +473,13 @@
       });
     });
 
-    if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
-    if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+    // Offsets are defined as currentIndex - i (positive = right, negative = left)
+    // so that the auto-advance-on-end effect can park the finished video on the
+    // right and bring the next one in from the left. That means the intuitive
+    // "next" motion (right arrow reveals content sliding in from the right) is
+    // the reverse operation on currentIndex from what the auto-advance uses.
+    if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex + 1));
+    if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex - 1));
 
     build();
   }
