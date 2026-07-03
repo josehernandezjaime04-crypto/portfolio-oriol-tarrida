@@ -322,8 +322,8 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
 .filmography-head h2{font-size:clamp(2rem,4vw,2.8rem);margin-top:10px;color:var(--cream);}
 
 .film-grid{
-  max-width:var(--maxw);margin:0 auto;
-  display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:20px;
+  max-width:1800px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fill, minmax(190px, 1fr));gap:18px;
 }
 .film-card{
   position:relative;display:block;aspect-ratio:2/3;border-radius:4px;overflow:hidden;
@@ -337,8 +337,8 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   background:linear-gradient(to top, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.1) 55%);
 }
 .film-card.is-focused{
-  transform:scale(1.22);z-index:5;
-  box-shadow:0 28px 60px -14px rgba(0,0,0,0.75);
+  transform:scale(1.38);z-index:5;
+  box-shadow:0 32px 70px -14px rgba(0,0,0,0.8);
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -346,9 +346,9 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   .film-card.is-focused{transform:none;box-shadow:none;}
 }
 .film-title{
-  position:absolute;left:14px;right:14px;bottom:14px;z-index:2;
-  font-family:var(--ff-display);font-size:1.3rem;letter-spacing:0.02em;color:var(--cream);
-  line-height:1.05;
+  position:absolute;left:12px;right:12px;bottom:10px;z-index:2;
+  font-family:var(--ff-display);font-size:0.82rem;font-weight:400;letter-spacing:0.02em;color:var(--cream);
+  line-height:1.15;text-transform:uppercase;
 }
 
 .film-empty{
