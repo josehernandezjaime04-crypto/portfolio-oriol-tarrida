@@ -313,16 +313,50 @@
   // ---------------------------------------------------------------
   // Showreel: tab-filtered coverflow video carousel
   // ---------------------------------------------------------------
-  // Fill these in once video files are available, e.g.:
-  // coordinador: [
-  //   { src: "assets/videos/coordinador-1.mp4", poster: "assets/img/coordinador-main.jpg" },
-  //   { src: "assets/videos/coordinador-2.mp4" },
-  // ],
   const videoLibrary = {
-    coordinador: [],
-    driver: [],
-    performer: [],
-    armero: [],
+    coordinador: [
+      { src: "assets/videos/coordinador/coordinador-1.mp4" },
+      { src: "assets/videos/coordinador/coordinador-2.mp4" },
+      { src: "assets/videos/coordinador/coordinador-3.mp4" },
+      { src: "assets/videos/coordinador/coordinador-4.mp4" },
+      { src: "assets/videos/coordinador/coordinador-5.mp4" },
+      { src: "assets/videos/coordinador/coordinador-6.mp4" },
+      { src: "assets/videos/coordinador/coordinador-7.mp4" },
+      { src: "assets/videos/coordinador/coordinador-8.mp4" },
+      { src: "assets/videos/coordinador/coordinador-9.mp4" },
+      { src: "assets/videos/coordinador/coordinador-10.mp4" },
+      { src: "assets/videos/coordinador/coordinador-11.mp4" },
+      { src: "assets/videos/coordinador/coordinador-12.mp4" },
+      { src: "assets/videos/coordinador/coordinador-13.mp4" },
+      { src: "assets/videos/coordinador/coordinador-14.mp4" },
+      { src: "assets/videos/coordinador/coordinador-15.mp4" },
+      { src: "assets/videos/coordinador/coordinador-16.mp4" },
+      { src: "assets/videos/coordinador/coordinador-17.mp4" },
+    ],
+    driver: [
+      { src: "assets/videos/driver/driver-1.mp4" },
+      { src: "assets/videos/driver/driver-2.mp4" },
+      { src: "assets/videos/driver/driver-3.mp4" },
+      { src: "assets/videos/driver/driver-4.mp4" },
+      { src: "assets/videos/driver/driver-5.mp4" },
+      { src: "assets/videos/driver/driver-6.mp4" },
+      { src: "assets/videos/driver/driver-7.mp4" },
+    ],
+    performer: [
+      { src: "assets/videos/performer/performer-1.mp4" },
+      { src: "assets/videos/performer/performer-2.mp4" },
+    ],
+    armero: [
+      { src: "assets/videos/armero/armero-1.mp4" },
+      { src: "assets/videos/armero/armero-2.mp4" },
+      { src: "assets/videos/armero/armero-3.mp4" },
+      { src: "assets/videos/armero/armero-4.mp4" },
+      { src: "assets/videos/armero/armero-5.mp4" },
+      { src: "assets/videos/armero/armero-6.mp4" },
+      { src: "assets/videos/armero/armero-7.mp4" },
+      { src: "assets/videos/armero/armero-8.mp4" },
+      { src: "assets/videos/armero/armero-9.mp4" },
+    ],
   };
 
   function initShowreel() {
