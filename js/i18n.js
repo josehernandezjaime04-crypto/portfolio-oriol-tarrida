@@ -77,14 +77,6 @@ const translations = {
     "contact.imdbValue": "Veure perfil",
     "contact.social": "Altres perfils",
     "contact.direct": "Contacte directe",
-    "contact.form.label": "Envia'm un missatge",
-    "contact.form.name": "Nom",
-    "contact.form.email": "Email",
-    "contact.form.message": "Missatge",
-    "contact.form.send": "Enviar",
-    "contact.form.sending": "Enviant…",
-    "contact.form.success": "Missatge enviat! Et respondré aviat.",
-    "contact.form.error": "No s'ha pogut enviar. S'obrirà el teu correu com a alternativa."
   },
 
   es: {
@@ -165,14 +157,6 @@ const translations = {
     "contact.imdbValue": "Ver perfil",
     "contact.social": "Otros perfiles",
     "contact.direct": "Contacto directo",
-    "contact.form.label": "Envíame un mensaje",
-    "contact.form.name": "Nombre",
-    "contact.form.email": "Email",
-    "contact.form.message": "Mensaje",
-    "contact.form.send": "Enviar",
-    "contact.form.sending": "Enviando…",
-    "contact.form.success": "¡Mensaje enviado! Te responderé pronto.",
-    "contact.form.error": "No se ha podido enviar. Se abrirá tu correo como alternativa."
   },
 
   en: {
@@ -252,14 +236,6 @@ const translations = {
     "contact.imdb": "IMDb",
     "contact.imdbValue": "View profile",
     "contact.social": "Other profiles",
-    "contact.direct": "Direct contact",
-    "contact.form.label": "Send me a message",
-    "contact.form.name": "Name",
-    "contact.form.email": "Email",
-    "contact.form.message": "Message",
-    "contact.form.send": "Send",
-    "contact.form.sending": "Sending…",
-    "contact.form.success": "Message sent! I'll get back to you soon.",
-    "contact.form.error": "Couldn't send it. Opening your email as a fallback."
+    "contact.direct": "Direct contact"
   }
 };

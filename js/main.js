@@ -498,62 +498,6 @@
     });
   });
 
-  // Contact form -> Formspree (AJAX with mailto fallback)
-  const form = document.getElementById("contactForm");
-  const formStatus = document.getElementById("formStatus");
-
-  function mailtoFallback() {
-    const name = document.getElementById("cf-name").value;
-    const email = document.getElementById("cf-email").value;
-    const message = document.getElementById("cf-message").value;
-    const subject = encodeURIComponent(`Contacto web — ${name}`);
-    const body = encodeURIComponent(`${message}\n\n${email}`);
-    window.location.href = `mailto:oriol@tarrida.org?subject=${subject}&body=${body}`;
-  }
-
-  function setStatus(key) {
-    if (!formStatus) return;
-    const dict = translations[currentLang];
-    formStatus.textContent = dict[key] || "";
-    formStatus.dataset.state = key.split(".").pop();
-  }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formIsConfigured = !form.action.includes("YOUR_FORM_ID");
-
-    if (!formIsConfigured) {
-      // Formspree not set up yet: fall back straight to the user's mail client
-      mailtoFallback();
-      return;
-    }
-
-    const submitBtn = form.querySelector(".submit-btn");
-    submitBtn.disabled = true;
-    setStatus("contact.form.sending");
-
-    fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { Accept: "application/json" },
-    })
-      .then((response) => {
-        if (response.ok) {
-          form.reset();
-          setStatus("contact.form.success");
-        } else {
-          throw new Error("Formspree error");
-        }
-      })
-      .catch(() => {
-        setStatus("contact.form.error");
-        mailtoFallback();
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-      });
-  });
-
   // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
