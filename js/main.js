@@ -372,11 +372,11 @@
     let currentIndex = 0;
     let entries = []; // { el, video } — kept alive across goTo() so CSS transitions can animate
 
-    // Positive offset = already played, parked on the right.
-    // Negative offset = queued up next, waiting on the left.
+    // Positive offset = queued up next, waiting on the right.
+    // Negative offset = already played, parked on the left.
     function computeOffset(i) {
       const total = entries.length;
-      let offset = currentIndex - i;
+      let offset = i - currentIndex;
       const half = Math.floor(total / 2);
       if (offset > half) offset -= total;
       if (offset < -half) offset += total;
@@ -473,13 +473,8 @@
       });
     });
 
-    // Offsets are defined as currentIndex - i (positive = right, negative = left)
-    // so that the auto-advance-on-end effect can park the finished video on the
-    // right and bring the next one in from the left. That means the intuitive
-    // "next" motion (right arrow reveals content sliding in from the right) is
-    // the reverse operation on currentIndex from what the auto-advance uses.
-    if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex + 1));
-    if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex - 1));
+    if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+    if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
 
     build();
   }
