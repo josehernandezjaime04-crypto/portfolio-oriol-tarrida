@@ -392,7 +392,7 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
 }
 .showreel-track{
   position:relative;width:100%;max-width:920px;height:440px;z-index:1;
-  display:flex;align-items:center;justify-content:center;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
 .showreel-item{
   position:absolute;width:230px;aspect-ratio:9/16;border-radius:6px;overflow:hidden;
