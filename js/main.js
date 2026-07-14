@@ -3,7 +3,7 @@
   const LANG_KEY = "oriol-portfolio-lang";
   const supported = ["ca", "es", "en"];
   let currentLang = localStorage.getItem(LANG_KEY);
-  if (!supported.includes(currentLang)) currentLang = "ca";
+  if (!supported.includes(currentLang)) currentLang = "es";
 
   function applyLang(lang) {
     currentLang = lang;
