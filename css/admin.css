@@ -1,0 +1,246 @@
+/* Panel admin — reutiliza las variables de tema de css/style.css (--bg,
+   --gold, --cream, etc.), no define paleta nueva. */
+
+.footer-credit-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: inherit;
+}
+
+/* ---------- Login (overlay en index.html y pantalla en admin.html) ---------- */
+.admin-login-panel,
+.admin-login-form {
+  width: 100%;
+  max-width: 340px;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 32px;
+  font-family: var(--ff-body);
+}
+
+.admin-login-form h2 {
+  font-family: var(--ff-display);
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.admin-login-form label {
+  color: var(--cream-dim);
+  font-size: 0.85rem;
+}
+
+.admin-login-form input {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--cream);
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--ff-body);
+}
+
+.admin-login-form input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.admin-login-form button {
+  background: var(--gold);
+  color: var(--panel);
+  border: none;
+  padding: 11px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--ff-body);
+}
+
+.admin-login-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.admin-login-error {
+  color: var(--coral);
+  font-size: 0.85rem;
+}
+
+/* ---------- admin.html ---------- */
+.admin-body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--ff-body);
+  min-height: 100vh;
+}
+
+.admin-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.admin-bar h1 {
+  font-family: var(--ff-display);
+  letter-spacing: 0.04em;
+  font-size: 1.3rem;
+  color: var(--cream);
+}
+
+.admin-bar button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--cream-dim);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--ff-body);
+}
+
+.admin-bar button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.admin-login-screen {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.admin-content {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 32px 28px 80px;
+}
+
+.admin-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--panel);
+  border: 1px solid var(--gold);
+  color: var(--cream);
+  padding: 12px 20px;
+  border-radius: 8px;
+  z-index: 300;
+  font-size: 0.9rem;
+}
+
+.admin-category {
+  margin-bottom: 48px;
+}
+
+.admin-category h2 {
+  font-family: var(--ff-display);
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.admin-subgroup {
+  margin-top: 18px;
+}
+
+.admin-subgroup h3 {
+  color: var(--cream-dim);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.admin-thumb {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.admin-thumb img,
+.admin-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-thumb-delete {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(6, 5, 4, 0.75);
+  color: var(--cream);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.admin-thumb-delete:hover {
+  background: var(--coral);
+}
+
+.admin-upload {
+  aspect-ratio: 4 / 5;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--cream-dim);
+  font-size: 0.8rem;
+  padding: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.admin-upload:hover,
+.admin-upload.dragover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.admin-upload input {
+  display: none;
+}
+
+.admin-note {
+  color: var(--cream-dim);
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.admin-empty-state {
+  color: var(--cream-dim);
+  padding: 40px;
+  text-align: center;
+}

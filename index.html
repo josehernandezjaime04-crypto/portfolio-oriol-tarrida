@@ -32,6 +32,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero-portrait.jpg" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css?v=16">
+<link rel="stylesheet" href="css/admin.css?v=1">
 </head>
 <body>
 
@@ -518,7 +519,7 @@
     <img src="assets/img/logo.png?v=5" alt="Oriol Tarrida Homedes" class="footer-logo">
     <div class="footer-tags" id="footerTags"></div>
     <div class="footer-rule"></div>
-    <p class="footer-copy">&copy; <span id="year"></span> Oriol Tarrida Homedes</p>
+    <p class="footer-copy">&copy; <span id="year"></span> <a href="#" id="footerAdminLink" class="footer-credit-link">Oriol Tarrida Homedes</a></p>
   </div>
 </footer>
 
@@ -527,7 +528,14 @@
   <img src="" alt="" id="lightboxImg">
 </div>
 
+<div class="lightbox admin-login-overlay" id="adminLoginOverlay">
+  <button class="lightbox-close" id="adminLoginClose" aria-label="Close">&times;</button>
+  <div class="admin-login-panel" id="adminLoginMount"></div>
+</div>
+
 <script src="js/i18n.js?v=8"></script>
 <script src="js/main.js?v=16"></script>
+<script src="js/admin-auth.js?v=1"></script>
+<script src="js/admin-entry.js?v=1"></script>
 </body>
 </html>
