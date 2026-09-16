@@ -306,58 +306,10 @@
     startAutoplay();
   }
 
-  document.querySelectorAll("[data-carousel]").forEach((carouselEl) => {
-    initCarousel(carouselEl.closest(".category"));
-  });
-
   // ---------------------------------------------------------------
   // Showreel: tab-filtered coverflow video carousel
   // ---------------------------------------------------------------
-  const videoLibrary = {
-    coordinador: [
-      { src: "assets/videos/coordinador/coordinador-1.mp4", poster: "assets/videos/posters/coordinador/coordinador-1.jpg" },
-      { src: "assets/videos/coordinador/coordinador-2.mp4", poster: "assets/videos/posters/coordinador/coordinador-2.jpg" },
-      { src: "assets/videos/coordinador/coordinador-3.mp4", poster: "assets/videos/posters/coordinador/coordinador-3.jpg" },
-      { src: "assets/videos/coordinador/coordinador-4.mp4", poster: "assets/videos/posters/coordinador/coordinador-4.jpg" },
-      { src: "assets/videos/coordinador/coordinador-5.mp4", poster: "assets/videos/posters/coordinador/coordinador-5.jpg" },
-      { src: "assets/videos/coordinador/coordinador-6.mp4", poster: "assets/videos/posters/coordinador/coordinador-6.jpg" },
-      { src: "assets/videos/coordinador/coordinador-7.mp4", poster: "assets/videos/posters/coordinador/coordinador-7.jpg" },
-      { src: "assets/videos/coordinador/coordinador-8.mp4", poster: "assets/videos/posters/coordinador/coordinador-8.jpg" },
-      { src: "assets/videos/coordinador/coordinador-9.mp4", poster: "assets/videos/posters/coordinador/coordinador-9.jpg" },
-      { src: "assets/videos/coordinador/coordinador-10.mp4", poster: "assets/videos/posters/coordinador/coordinador-10.jpg" },
-      { src: "assets/videos/coordinador/coordinador-11.mp4", poster: "assets/videos/posters/coordinador/coordinador-11.jpg" },
-      { src: "assets/videos/coordinador/coordinador-12.mp4", poster: "assets/videos/posters/coordinador/coordinador-12.jpg" },
-      { src: "assets/videos/coordinador/coordinador-13.mp4", poster: "assets/videos/posters/coordinador/coordinador-13.jpg" },
-      { src: "assets/videos/coordinador/coordinador-14.mp4", poster: "assets/videos/posters/coordinador/coordinador-14.jpg" },
-      { src: "assets/videos/coordinador/coordinador-15.mp4", poster: "assets/videos/posters/coordinador/coordinador-15.jpg" },
-      { src: "assets/videos/coordinador/coordinador-16.mp4", poster: "assets/videos/posters/coordinador/coordinador-16.jpg" },
-      { src: "assets/videos/coordinador/coordinador-17.mp4", poster: "assets/videos/posters/coordinador/coordinador-17.jpg" },
-    ],
-    driver: [
-      { src: "assets/videos/driver/driver-1.mp4", poster: "assets/videos/posters/driver/driver-1.jpg" },
-      { src: "assets/videos/driver/driver-2.mp4", poster: "assets/videos/posters/driver/driver-2.jpg" },
-      { src: "assets/videos/driver/driver-3.mp4", poster: "assets/videos/posters/driver/driver-3.jpg" },
-      { src: "assets/videos/driver/driver-4.mp4", poster: "assets/videos/posters/driver/driver-4.jpg" },
-      { src: "assets/videos/driver/driver-5.mp4", poster: "assets/videos/posters/driver/driver-5.jpg" },
-      { src: "assets/videos/driver/driver-6.mp4", poster: "assets/videos/posters/driver/driver-6.jpg" },
-      { src: "assets/videos/driver/driver-7.mp4", poster: "assets/videos/posters/driver/driver-7.jpg" },
-    ],
-    performer: [
-      { src: "assets/videos/performer/performer-1.mp4", poster: "assets/videos/posters/performer/performer-1.jpg" },
-      { src: "assets/videos/performer/performer-2.mp4", poster: "assets/videos/posters/performer/performer-2.jpg" },
-    ],
-    armero: [
-      { src: "assets/videos/armero/armero-1.mp4", poster: "assets/videos/posters/armero/armero-1.jpg" },
-      { src: "assets/videos/armero/armero-2.mp4", poster: "assets/videos/posters/armero/armero-2.jpg" },
-      { src: "assets/videos/armero/armero-3.mp4", poster: "assets/videos/posters/armero/armero-3.jpg" },
-      { src: "assets/videos/armero/armero-4.mp4", poster: "assets/videos/posters/armero/armero-4.jpg" },
-      { src: "assets/videos/armero/armero-5.mp4", poster: "assets/videos/posters/armero/armero-5.jpg" },
-      { src: "assets/videos/armero/armero-6.mp4", poster: "assets/videos/posters/armero/armero-6.jpg" },
-      { src: "assets/videos/armero/armero-7.mp4", poster: "assets/videos/posters/armero/armero-7.jpg" },
-      { src: "assets/videos/armero/armero-8.mp4", poster: "assets/videos/posters/armero/armero-8.jpg" },
-      { src: "assets/videos/armero/armero-9.mp4", poster: "assets/videos/posters/armero/armero-9.jpg" },
-    ],
-  };
+  let videoLibrary = {};
 
   function initShowreel() {
     const track = document.getElementById("showreelTrack");
@@ -479,7 +431,58 @@
     build();
   }
 
-  initShowreel();
+  // ---------------------------------------------------------------
+  // Media: load photos + videos from assets/media.json, render the
+  // carousel/gallery-strip markup, then run the carousel + showreel
+  // init logic above (unchanged) against that markup.
+  // ---------------------------------------------------------------
+  function escapeHtml(str) {
+    return String(str || "").replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    }[c]));
+  }
+
+  function renderPhotos(photosByCat) {
+    Object.keys(photosByCat || {}).forEach((cat) => {
+      const items = photosByCat[cat] || [];
+      const track = document.querySelector(`.carousel[data-carousel="${cat}"] .carousel-track`);
+      const strip = document.querySelector(`.gallery-strip[data-gallery="${cat}"]`);
+
+      if (track) {
+        track.innerHTML = items
+          .map((p) => `<img class="carousel-slide" src="${escapeHtml(p.src)}" alt="${escapeHtml(p.alt)}">`)
+          .join("");
+      }
+      if (strip) {
+        strip.innerHTML = items
+          .map((p, i) => `<img src="${escapeHtml(p.src)}" alt="" tabindex="0" role="button" aria-label="${i + 1}">`)
+          .join("");
+      }
+    });
+  }
+
+  function initMediaDependent() {
+    document.querySelectorAll("[data-carousel]").forEach((carouselEl) => {
+      initCarousel(carouselEl.closest(".category"));
+    });
+    initShowreel();
+  }
+
+  fetch("assets/media.json", { cache: "no-cache" })
+    .then((r) => r.json())
+    .then((data) => {
+      renderPhotos(data.photos);
+      videoLibrary = data.videos || {};
+      initMediaDependent();
+    })
+    .catch((err) => {
+      console.error("No se pudo cargar assets/media.json:", err);
+      initMediaDependent();
+    });
 
   // Film cards: zoom in a bit more after hovering for 2s straight
   document.querySelectorAll(".film-card").forEach((card) => {
