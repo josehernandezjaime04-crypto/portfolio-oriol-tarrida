@@ -3,7 +3,7 @@
 // (ver portfolio-oriol-tarrida-admin-worker/README.md) — esto no es un
 // secreto, es solo la dirección pública de la API.
 (function () {
-  const WORKER_URL = "https://REPLACE-CON-TU-URL-DEL-WORKER.workers.dev";
+  const WORKER_URL = "https://portfolio-oriol-tarrida-admin.jose-hernandez-dev.workers.dev";
   const TOKEN_KEY = "oriol-admin-token";
 
   function getToken() {
