@@ -83,11 +83,11 @@
     "performer": [
       {
         "src": "assets/img/performer-1.jpg",
-        "alt": "Stunt Performer Ã¢ÂÂ full body burn"
+        "alt": "Stunt Performer ÃÂ¢ÃÂÃÂ full body burn"
       },
       {
         "src": "assets/img/performer-2.jpg",
-        "alt": "Stunt Performer Ã¢ÂÂ fire ignition"
+        "alt": "Stunt Performer ÃÂ¢ÃÂÃÂ fire ignition"
       },
       {
         "src": "assets/img/gallery/gal-performer-1.jpg",
@@ -165,6 +165,10 @@
       },
       {
         "src": "assets/img/gallery/gal-armero-13.jpg",
+        "alt": ""
+      },
+      {
+        "src": "assets/img/gallery/armero-1789609142829-8488.jpg",
         "alt": ""
       }
     ]
