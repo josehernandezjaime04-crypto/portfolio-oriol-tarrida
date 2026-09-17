@@ -463,6 +463,44 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   .showreel-nav{width:34px;height:34px;}
 }
 
+/* ---------- Podcast ---------- */
+.podcast{background:var(--bg-alt);padding:12vh 24px;text-align:center;border-top:1px solid var(--line);}
+.podcast-inner{max-width:900px;margin:0 auto;}
+.podcast-inner h2{font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 16px;color:var(--cream);}
+.podcast-sub{max-width:560px;margin:0 auto 44px;color:var(--cream-dim);font-size:0.95rem;line-height:1.6;}
+
+.podcast-episodes{
+  display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:24px;
+  margin-bottom:40px;text-align:left;
+}
+.podcast-episode{
+  display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  background:var(--panel);transition:border-color .25s ease, transform .25s ease;
+}
+.podcast-episode:hover{border-color:var(--gold);transform:translateY(-3px);}
+.podcast-thumb{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#000;}
+.podcast-thumb img{width:100%;height:100%;object-fit:cover;filter:brightness(0.85);}
+.podcast-play{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;background:rgba(10,9,8,0.55);
+  border:1px solid rgba(236,225,203,0.4);display:flex;align-items:center;justify-content:center;
+}
+.podcast-play::before{
+  content:"";width:0;height:0;margin-left:4px;
+  border-top:11px solid transparent;border-bottom:11px solid transparent;border-left:18px solid var(--cream);
+}
+.podcast-episode-title{
+  display:block;padding:16px 18px;font-family:var(--ff-body);font-size:0.9rem;font-weight:500;
+  color:var(--cream);line-height:1.4;
+}
+
+.podcast-cta{
+  display:inline-block;border:1px solid var(--gold);border-radius:24px;color:var(--gold);
+  font-family:var(--ff-body);font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+  padding:12px 28px;text-decoration:none;transition:background .25s ease, color .25s ease;
+}
+.podcast-cta:hover{background:var(--gold);color:var(--panel);}
+
 /* ---------- Contact ---------- */
 .contact{
   position:relative;background:var(--bg-alt);padding:14vh 24px;

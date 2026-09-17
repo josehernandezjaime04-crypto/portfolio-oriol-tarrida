@@ -67,6 +67,11 @@ const translations = {
     "showreel.title": "L'acció, en moviment",
     "showreel.soon": "Vídeo disponible properament",
 
+    "podcast.eyebrow": "Podcast",
+    "podcast.title": "També ho explica al pòdcast",
+    "podcast.sub": "Oriol participa a Hacemos Cine y Acción Podcast, on explica com es preparen les seqüències d'acció més espectaculars del cinema.",
+    "podcast.cta": "Veure el canal a YouTube",
+
     "contact.eyebrow": "Contacte",
     "contact.title": "Parlem del teu proper projecte?",
     "contact.sub": "Disponible per a rodatges, publicitat i produccions que necessitin coordinació d'acció, stunt driving, stunt performance o gestió d'armeria en set.",
@@ -147,6 +152,11 @@ const translations = {
     "showreel.title": "La acción, en movimiento",
     "showreel.soon": "Vídeo disponible próximamente",
 
+    "podcast.eyebrow": "Podcast",
+    "podcast.title": "También lo cuenta en el podcast",
+    "podcast.sub": "Oriol participa en Hacemos Cine y Acción Podcast, donde cuenta cómo se preparan las secuencias de acción más espectaculares del cine.",
+    "podcast.cta": "Ver el canal en YouTube",
+
     "contact.eyebrow": "Contacto",
     "contact.title": "¿Hablamos de tu próximo proyecto?",
     "contact.sub": "Disponible para rodajes, publicidad y producciones que necesiten coordinación de acción, stunt driving, stunt performance o gestión de armería en set.",
@@ -226,6 +236,11 @@ const translations = {
     "showreel.eyebrow": "Showreel",
     "showreel.title": "The action, in motion",
     "showreel.soon": "Video coming soon",
+
+    "podcast.eyebrow": "Podcast",
+    "podcast.title": "He talks about it on the podcast too",
+    "podcast.sub": "Oriol takes part in Hacemos Cine y Acción Podcast, talking about how the most spectacular action sequences in film are put together.",
+    "podcast.cta": "Watch the channel on YouTube",
 
     "contact.eyebrow": "Contact",
     "contact.title": "Let's talk about your next project",
