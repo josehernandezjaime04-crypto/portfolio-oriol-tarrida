@@ -69,7 +69,7 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   display:flex;align-items:center;justify-content:space-between;
   padding:18px 24px;
 }
-.logo-img{height:98px;width:auto;transition:transform .3s cubic-bezier(.19,1,.22,1), filter .3s ease;}
+.logo-img{height:136px;width:auto;transition:transform .3s cubic-bezier(.19,1,.22,1), filter .3s ease;}
 .logo-link{display:inline-flex;}
 .logo-link:hover .logo-img{transform:scale(1.05);filter:drop-shadow(0 0 10px rgba(185,154,61,0.35));}
 .main-nav{display:flex;align-items:center;gap:28px;}
@@ -628,7 +628,7 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   max-width:520px;margin:0 auto;
   display:flex;flex-direction:column;align-items:center;gap:16px;
 }
-.footer-logo{height:80px;width:auto;opacity:0.9;}
+.footer-logo{height:118px;width:auto;opacity:0.9;}
 
 .footer-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:420px;}
 .footer-tag{
@@ -689,7 +689,7 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
 
 @media (max-width:520px){
   .header-inner{padding:12px 16px;}
-  .logo-img{height:74px;}
+  .logo-img{height:100px;}
   .contact-methods{flex-direction:column;align-items:stretch;}
   .contact-item{flex:1 1 auto;}
   .contact-photo{max-width:100%;}
