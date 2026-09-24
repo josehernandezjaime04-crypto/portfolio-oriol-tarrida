@@ -328,12 +328,21 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
 .film-count strong{color:var(--gold);font-weight:500;}
 
 .film-grid{
-  max-width:1800px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(auto-fill, minmax(190px, 1fr));gap:18px;
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;gap:14px;
+  overflow-x:auto;overflow-y:hidden;
+  padding:42px 24px 46px;
+  scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:rgba(185,154,61,0.5) transparent;
 }
+.film-grid::-webkit-scrollbar{height:6px;}
+.film-grid::-webkit-scrollbar-track{background:transparent;}
+.film-grid::-webkit-scrollbar-thumb{background:rgba(185,154,61,0.45);border-radius:3px;}
 .film-card{
   position:relative;display:block;aspect-ratio:2/3;border-radius:4px;overflow:hidden;
   background:#000;z-index:1;border:1px solid rgba(236,225,203,0.08);
+  flex:0 0 128px;scroll-snap-align:start;
   transition:transform .45s cubic-bezier(.19,1,.22,1), box-shadow .45s ease, border-color .3s ease, opacity .6s ease, z-index 0s;
 }
 .film-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.19,1,.22,1), filter .3s ease;filter:grayscale(0.3) brightness(0.82);}
@@ -354,13 +363,13 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   .film-card.is-focused{transform:none;box-shadow:none;}
 }
 .film-title{
-  position:absolute;left:12px;right:12px;bottom:10px;z-index:2;
-  font-family:var(--ff-display);font-size:1.02rem;font-weight:400;letter-spacing:0.02em;color:var(--cream);
+  position:absolute;left:8px;right:8px;bottom:8px;z-index:2;
+  font-family:var(--ff-display);font-size:0.72rem;font-weight:400;letter-spacing:0.02em;color:var(--cream);
   line-height:1.15;text-transform:uppercase;
 }
 
 .film-empty{
-  grid-column:1 / -1;min-height:220px;border-radius:4px;
+  flex:1 1 100%;min-height:220px;border-radius:4px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
   background:repeating-linear-gradient(135deg, #171513, #171513 12px, #1c1916 12px, #1c1916 24px);
   color:var(--grey);
