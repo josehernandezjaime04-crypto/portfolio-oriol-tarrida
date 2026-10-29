@@ -639,7 +639,7 @@ h1,h2{font-family:var(--ff-display);font-weight:400;text-transform:uppercase;let
   max-width:520px;margin:0 auto;
   display:flex;flex-direction:column;align-items:center;gap:16px;
 }
-.footer-logo{height:118px;width:auto;opacity:0.9;}
+.footer-logo{height:236px;width:auto;opacity:0.9;}
 
 .footer-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:420px;}
 .footer-tag{
