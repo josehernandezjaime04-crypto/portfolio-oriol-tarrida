@@ -81,6 +81,9 @@ const translations = {
     "contact.imdb": "IMDb",
     "contact.imdbValue": "Veure perfil",
     "contact.social": "Altres perfils",
+    "more.title": "Més serveis",
+    "more.cfx": "Efectes i material per a rodatge",
+    "more.sds": "Escola de conducció per a especialistes",
     "contact.direct": "Contacte directe",
   },
 
@@ -166,6 +169,9 @@ const translations = {
     "contact.imdb": "IMDb",
     "contact.imdbValue": "Ver perfil",
     "contact.social": "Otros perfiles",
+    "more.title": "Más servicios",
+    "more.cfx": "Efectos y material para rodaje",
+    "more.sds": "Escuela de conducción para especialistas",
     "contact.direct": "Contacto directo",
   },
 
@@ -251,6 +257,9 @@ const translations = {
     "contact.imdb": "IMDb",
     "contact.imdbValue": "View profile",
     "contact.social": "Other profiles",
+    "more.title": "More services",
+    "more.cfx": "Effects and on-set gear",
+    "more.sds": "Stunt driving school",
     "contact.direct": "Direct contact"
   }
 };
