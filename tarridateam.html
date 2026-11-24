@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TarridaTeam — Apúntate como especialista · Oriol Tarrida</title>
+<meta name="description" content="TarridaTeam: formulario para especialistas de acción que quieren formar parte del equipo de Oriol Tarrida Homedes.">
+<link rel="canonical" href="https://www.orioltarrida.com/tarridateam.html">
+<meta name="theme-color" content="#121110">
+<link rel="icon" type="image/png" href="assets/img/logo.png?v=6">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.orioltarrida.com/tarridateam.html">
+<meta property="og:title" content="TarridaTeam — Oriol Tarrida">
+<meta property="og:description" content="¿Eres especialista? Apúntate al equipo de Oriol Tarrida.">
+<meta property="og:image" content="https://www.orioltarrida.com/assets/img/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=26">
+<link rel="stylesheet" href="css/tarridateam.css?v=1">
+</head>
+<body class="pagina-team">
+
+<header class="site-header scrolled" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link" data-i18n-aria="nav.home">
+      <img src="assets/img/logo.png?v=6" alt="Oriol Tarrida Homedes" class="logo-img">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html#coordinador" data-i18n="nav.coordinador">Stunt Coordinator</a>
+      <a href="index.html#driver" data-i18n="nav.driver">Stunt Driver</a>
+      <a href="index.html#performer" data-i18n="nav.performer">Stunt Performer</a>
+      <a href="index.html#armero" data-i18n="nav.armero">Armero en Set</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contacto</a>
+      <a href="tarridateam.html" class="activo" aria-current="page">TarridaTeam</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma">
+        <button type="button" data-lang="ca">CA</button>
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="team">
+  <section class="team-intro">
+    <p class="eyebrow" data-t="eyebrow">Equipo de especialistas</p>
+    <h1 class="team-title">TARRIDATEAM</h1>
+    <p class="team-sub" data-t="intro">¿Eres especialista de acción? Rellena este formulario con tus datos, tus habilidades y algunas fotos. Revisaremos tu perfil y te contactaremos cuando encaje en un proyecto.</p>
+  </section>
+
+  <form class="team-form" id="teamForm" novalidate>
+    <!-- campo trampa para bots: las personas no lo ven -->
+    <div class="trampa" aria-hidden="true"><label>Web <input type="text" name="web" tabindex="-1" autocomplete="off"></label></div>
+
+    <fieldset>
+      <legend data-t="s.personal">Información personal</legend>
+      <div class="grid">
+        <label class="req"><span data-t="f.nombre">Nombre</span><input name="nombre" required maxlength="80" autocomplete="given-name"></label>
+        <label class="req"><span data-t="f.apellidos">Apellidos</span><input name="apellidos" required maxlength="120" autocomplete="family-name"></label>
+        <label><span data-t="f.genero">Género</span>
+          <select name="genero"><option value="">—</option><option value="Femenino" data-t="g.f">Femenino</option><option value="Masculino" data-t="g.m">Masculino</option></select></label>
+        <label class="req"><span data-t="f.nacimiento">Fecha de nacimiento</span><input name="fecha_nacimiento" type="date" required min="1930-01-01" autocomplete="bday"></label>
+        <label class="req"><span data-t="f.email">Email</span><input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+        <label class="req"><span data-t="f.telefono">Teléfono</span><input name="telefono" type="tel" required maxlength="40" autocomplete="tel"></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend data-t="s.especialista">Especialista</legend>
+      <div class="checks">
+        <label><input type="checkbox" name="acting"> <span data-t="f.acting">Tengo experiencia en interpretación (acting)</span></label>
+        <label><input type="checkbox" name="tatuajes"> <span data-t="f.tatuajes">Tengo tatuajes visibles</span></label>
+      </div>
+      <p class="campo-titulo" data-t="f.skills">Skills</p>
+      <div class="opciones" id="opSkills" data-name="skills"><p class="cargando" data-t="cargando">Cargando opciones…</p></div>
+      <p class="campo-titulo" data-t="f.idiomas">Idiomas</p>
+      <div class="opciones" id="opIdiomas" data-name="idiomas"></div>
+      <p class="campo-titulo" data-t="f.permisos">Permisos de conducir</p>
+      <div class="opciones" id="opPermisos" data-name="permisos"></div>
+      <label class="ancho"><span data-t="f.notas">Cuéntanos tu experiencia (rodajes, formación, especialidades)</span>
+        <textarea name="notas" rows="5" maxlength="3000"></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend data-t="s.apariencia">Apariencia y medidas</legend>
+      <div class="grid">
+        <label><span data-t="f.ojos">Color de ojos</span><select name="color_ojos" id="selOjos"><option value="">—</option></select></label>
+        <label><span data-t="f.pelo">Color de pelo</span><select name="color_pelo" id="selPelo"><option value="">—</option></select></label>
+        <label><span data-t="f.talla">Talla de camisa</span><select name="talla_camisa" id="selTalla"><option value="">—</option></select></label>
+        <label><span data-t="f.altura">Altura (cm)</span><input name="altura_cm" type="number" min="50" max="250" step="1" inputmode="numeric"></label>
+        <label><span data-t="f.peso">Peso (kg)</span><input name="peso_kg" type="number" min="20" max="250" step="0.5" inputmode="decimal"></label>
+        <label><span data-t="f.pie">Pie (talla)</span><input name="pie" type="number" min="15" max="55" step="0.5" inputmode="decimal"></label>
+        <label><span data-t="f.pantalon">Pantalón (talla)</span><input name="pantalon" type="number" min="20" max="70" step="1" inputmode="numeric"></label>
+        <label><span data-t="f.cintura">Cintura (cm)</span><input name="cintura_cm" type="number" min="30" max="200" step="1" inputmode="numeric"></label>
+        <label><span data-t="f.caderas">Caderas (cm)</span><input name="caderas_cm" type="number" min="30" max="200" step="1" inputmode="numeric"></label>
+        <label><span data-t="f.pecho">Pecho (cm)</span><input name="pecho_cm" type="number" min="30" max="200" step="1" inputmode="numeric"></label>
+        <label><span data-t="f.cuello">Cuello (cm)</span><input name="cuello_cm" type="number" min="20" max="80" step="1" inputmode="numeric"></label>
+        <label><span data-t="f.cabeza">Cabeza (cm)</span><input name="cabeza_cm" type="number" min="30" max="80" step="1" inputmode="numeric"></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend data-t="s.material">Fotos y vídeo</legend>
+      <p class="ayuda" data-t="fotos.ayuda">Sube entre 1 y 8 fotos: al menos un primer plano y un cuerpo entero. Se reducen automáticamente antes de enviarlas.</p>
+      <label class="subir"><input type="file" id="fotos" accept="image/jpeg,image/png,image/webp,image/heic" multiple>
+        <span data-t="fotos.boton">Elegir fotos</span></label>
+      <div class="miniaturas" id="miniaturas"></div>
+      <label class="ancho"><span data-t="f.video">Enlace a tu videobook (YouTube o Vimeo)</span>
+        <input name="video" type="url" maxlength="300" placeholder="https://www.youtube.com/watch?v=…"></label>
+    </fieldset>
+
+    <label class="consentimiento"><input type="checkbox" name="consentimiento" required>
+      <span data-t="consentimiento">Acepto que Oriol Tarrida guarde estos datos y fotos para valorar mi perfil y contactarme para proyectos. No se publican ni se ceden a terceros, y puedo pedir que se borren en cualquier momento escribiendo a <a href="mailto:oriol@tarrida.org">oriol@tarrida.org</a>.</span></label>
+
+    <p class="aviso" id="aviso" role="alert"></p>
+    <button type="submit" class="enviar" id="btnEnviar" data-t="enviar">Enviar solicitud</button>
+  </form>
+
+  <section class="team-ok" id="teamOk" hidden>
+    <h2 data-t="ok.titulo">¡Solicitud enviada!</h2>
+    <p data-t="ok.texto">Gracias. Hemos recibido tus datos y revisaremos tu perfil. Si encaja en algún proyecto, te contactaremos.</p>
+    <a href="index.html" class="volver" data-t="ok.volver">Volver a la web</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="assets/img/logo.png?v=6" alt="Oriol Tarrida Homedes" class="footer-logo">
+    <div class="footer-rule"></div>
+    <p class="footer-copy">&copy; <span id="year"></span> Oriol Tarrida Homedes</p>
+  </div>
+</footer>
+
+<script src="js/i18n.js?v=10"></script>
+<script src="js/tarridateam.js?v=1"></script>
+</body>
+</html>
