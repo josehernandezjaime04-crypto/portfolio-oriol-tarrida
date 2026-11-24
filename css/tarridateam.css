@@ -5,6 +5,13 @@
 .team{max-width:880px;margin:0 auto;padding:170px 24px 90px;}
 .team-intro{margin-bottom:44px;}
 .team-title{font-size:clamp(3rem, 9vw, 6.4rem);line-height:0.94;color:var(--cream);margin-bottom:18px;}
+.team-title .t-tarrida{color:var(--cream);}
+.team-title .t-team{color:var(--gold);}
+.team-title .t-agencia{
+  display:block;color:transparent;-webkit-text-stroke:1.5px var(--coral);
+  font-size:0.62em;letter-spacing:0.18em;margin-top:6px;
+}
+@supports not (-webkit-text-stroke:1px black){ .team-title .t-agencia{color:var(--coral);} }
 .team-sub{color:var(--cream-dim);max-width:60ch;font-size:1.02rem;}
 
 .team-form fieldset{border:1px solid var(--line);padding:26px 24px 28px;margin:0 0 22px;background:var(--bg-alt);}
